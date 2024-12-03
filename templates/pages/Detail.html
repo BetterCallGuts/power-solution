@@ -1,0 +1,299 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'framework/css/bootstrap-icons.css' %}">
+<style>
+
+.card {
+      border: none;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition:  0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background-color: rgb(200, 205, 210);
+      border-bottom: #0056b3 solid 10px;
+    }
+    .card:hover img{
+      opacity: 0.5;
+      
+      background-color: #0056b3;
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    .btn-read-more {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+    }
+    .btn-read-more:hover {
+      background-color: #003d80;
+    }
+    @media (max-width: 576px) {
+      .card {
+        padding: 10px;
+        font-size: 0.9rem; /* Reduce font size */
+      }
+      .card img {
+        height: 150px; /* Smaller images */
+        object-fit: cover;
+      }
+    
+    }
+
+    /* @media (max-width: 1110px) {
+      .sssss{
+
+      }
+    
+    } */
+    </style>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container my-5 text-light">
+    <!-- Product Detail Section -->
+    <div class="row">
+        <!-- Product Image and Thumbnails -->
+        <div class="col-md-6">
+            <!-- Main Product Image -->
+            <style>
+                #mainImage {
+                    transition: transform 0.3s ease;
+                    transform-origin: center center;
+                }
+                #mainImage:hover {
+                    transform: scale(2); /* Zoom in by 2 times */
+                }
+                .sssss{
+                    position: relative; width: 500px; height: 500;
+                }
+                .bg-C{
+                    background-color: #032931;
+                }
+                .text-C{
+                    color: #032931;
+                }
+                .btn-C{
+              
+                    color: white;
+                    transition: .2s;
+                }
+                .btn-C:hover{
+                    background-color: #003d80;
+                }
+                .Thumbnails img{
+                    cursor: pointer;
+                }
+                .Thumbnails img:hover{
+                    transform: scale(1.1);
+                    filter: opacity(0.5);
+                }
+                @media (max-width: 1200px) {
+                    .sssss{
+                        position: relative; width: 300px; height: 300px;
+                    }
+                    
+                }
+                @media (max-width: 768px) {
+                    .sssss{
+                        position: relative; width: 500px; height: 500px;
+                    }
+                    
+                }
+                @media (max-width: 520px) {
+                    .sssss{
+                        position: relative; width: 300px; height: 300px;
+                    }
+                    
+                }
+                </style>
+            
+            <div class="mb-3 overflow-hidden sssss" >
+                <img 
+                    id="mainImage" 
+                    src="https://via.placeholder.com/500x500" 
+                    alt="Product Image" 
+                    class="border border-secondary border-1 shadow-lg rounded img-fluid"
+                    style="position: relative; width: 100%; height: 100%;cursor: pointer;"
+                    >
+                    
+            </div>
+            
+           
+            <!-- Thumbnail Images -->
+            <div class="d-flex flex-wrap gap-2 Thumbnails">
+                <img src="https://via.placeholder.com/1000x500" alt="Thumbnail 1"              class="" style="border:2px solid #032931;width: 60px; height: 60px; object-fit: cover;" onclick="changeImage(this.src)">
+                <img src="https://via.placeholder.com/500x500" alt="Thumbnail 2"               class="" style="border:2px solid #032931;width: 60px; height: 60px; object-fit: cover;" onclick="changeImage(this.src)">
+                <img src="https://via.placeholder.com/500x500/yellow/black/" alt="Thumbnail 3" class="" style="border:2px solid #032931;width: 60px; height: 60px; object-fit: cover;" onclick="changeImage(this.src)">
+                <img src="https://via.placeholder.com/500x500" alt="Thumbnail 4"               class="" style="border:2px solid #032931;width: 60px; height: 60px; object-fit: cover;" onclick="changeImage(this.src)">
+            </div>
+            
+        </div>
+        <!--  -->
+
+        
+        <!--  -->
+        <!-- Product Details -->
+        <div class="col-md-6  flex-sm  flex-sm-row" style="border-left : #032931 solid 4px;">
+            <h1 class="fw-bold">Product Name</h1>
+            <p class="text-muted">Category: <span class="text-dark">Electronics</span></p>
+   
+   
+            <p class="mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet erat vitae eros 
+                interdum, vel cursus ligula luctus. Fusce ac magna ut nulla lacinia tempor.
+            </p>
+            <div class="d-flex gap-2 mt-4">
+                <button class="btn btn-C btn-lg bg-C">Request Information</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- ENd first cointainer -->
+<!-- Description -->
+
+<div class="container my-5">
+
+
+    
+    <!-- Details and Policy Section -->
+    <div class="row text-light">
+        
+        <!-- Description and Reviews -->
+        <div class="col-md-8">
+            
+            <h3 class="fw-bold mb-4 text-C">Product Description</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet, ex at faucibus blandit, sapien sapien gravida ligula, nec malesuada turpis eros non nulla. Aenean a nisl vel justo pharetra vehicula non in nisl. Duis convallis auctor nisl, a pretium metus gravida sed.
+            </p>
+            <hr class="my-4">
+            
+            
+        </div>
+
+
+
+<!-- end add review -->
+
+        <!-- Policies and Features -->
+        <div class="col-md-4 border-start  border-secondary">
+            <h3 class="fw-bold mb-4 text-C">Our Policies</h3>
+            <ul class="list-unstyled">
+                <li class="d-flex align-items-start mb-3">
+                    <span class="me-3 text-C">
+                        <i class="bi bi-truck fs-4"></i>
+                    </span>
+                    <div>
+                        <h5 class="fw-bold mb-1">Fast Delivery</h5>
+                        <p class="mb-0">2-5 Days</p>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                    <span class="me-3 text-C">
+                        <i class="bi bi-headset fs-4"></i>
+                    </span>
+                    <div>
+                        <h5 class="fw-bold mb-1">Online Support</h5>
+                        <p class="mb-0">Chat and Phone</p>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                    <span class="me-3 text-C">
+                        <i class="bi bi-shield-check fs-4"></i>
+                    </span>
+                    <div>
+                        <h5 class="fw-bold mb-1">Order Protection</h5>
+                        <p class="mb-0">Secured Information</p>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                    <span class="me-3 text-C">
+                        <i class="bi bi-gift fs-4"></i>
+                    </span>
+                    <div>
+                        <h5 class="fw-bold mb-1">Promotion Gift</h5>
+                        <p class="mb-0">Special Offers!</p>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                    <span class="me-3 text-C">
+                        <i class="bi bi-arrow-repeat fs-4"></i>
+                    </span>
+                    <div>
+                        <h5 class="fw-bold mb-1">Money Back</h5>
+                        <p class="mb-0">Return Over 14 Days</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- end description -->
+
+
+
+<!-- Suggested Products -->
+
+    <hr>
+    <h3 class="mb-4   text-start px-5 text-light ">Suggested Products</h3>
+    <hr>
+    <div class="container mb-5 fw-bold">
+        <!-- Similar Items Section -->
+        <div class="mt-5">
+            <div class="row">
+                <!-- Similar Item 1 -->
+                
+                <!-- Similar Item 4 -->
+                {% for a_ in "123123123" %}
+
+                <a href="{% url 'detail' a_ %}" class="col-lg-3 col-md-6 my-3  col-sm-12 text-decoration-none">
+                    <div class="card h-100">
+                        <img src="{% static 'media/spare_.jpg' %}" class="card-img-top" alt="Genuine Spare Parts">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">GENUINE SPARE PARTS & ACCESSORIES</h5>
+                            <p class="text-muted">February 24th, 2020</p>
+                            <p class="card-text">Genuine spare parts for Jubaili Bros.</p>
+
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+{% block js %}
+<script>
+    const mainImage = document.getElementById('mainImage');
+
+    mainImage.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = mainImage.getBoundingClientRect();
+        const x = ((e.clientX - left) / width) * 100;
+        const y = ((e.clientY - top) / height) * 100;
+
+        mainImage.style.transformOrigin = `${x}% ${y}%`;
+    });
+</script>
+
+<script>
+    // JavaScript to change the main image when a thumbnail is clicked
+    function changeImage(src) {
+        document.getElementById('mainImage').src = src;
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'framework/css/swiper.css' %}">
+    <style >
+      
+      #swiper-1 img{
+        object-fit: cover;
+        transition:  0.3s;
+            width: 100%;
+            height: 100%;
+            object-position: center;
+        }
+        /*  */
+        .card {
+      border: none;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition:  0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background-color: rgb(200, 205, 210);
+      border-bottom: #0056b3 solid 10px;
+    }
+    .card:hover img{
+      opacity: 0.5;
+      
+      background-color: #0056b3;
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    .btn-read-more {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+    }
+    .btn-read-more:hover {
+      background-color: #003d80;
+    }
+    @media (max-width: 576px) {
+      .card {
+        padding: 10px;
+        font-size: 0.9rem; /* Reduce font size */
+      }
+      .card img {
+        height: 150px; /* Smaller images */
+        object-fit: cover;
+      }
+    
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="swiper" id="swiper-1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+                    <img src="{% static 'media/home-slide-3.jpg' %}" alt="Slide 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'media/home-slide-6.jpg' %}" alt="Slide 1">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div> 
+    <div class="container">
+    </div>
+<!--  -->
+<h2 class="text-center my-5 text-light">Featured Products</h2>
+<div class="container my-5">
+    <div class="row g-4">
+       
+      {% for a_ in "123123123" %}
+
+      <a href="{% url 'detail' a_ %}" class="col-lg-3 col-md-6   col-sm-12 text-decoration-none">
+        <div class="card h-100">
+          <img src="{% static 'media/spare_.jpg' %}" class="card-img-top" alt="Genuine Spare Parts">
+          <div class="card-body text-center">
+            <h5 class="card-title">GENUINE SPARE PARTS & ACCESSORIES</h5>
+            <p class="text-muted">February 24th, 2020</p>
+            <p class="card-text">Genuine spare parts for Jubaili Bros.</p>
+
+          </div>
+        </div>
+    </a>
+      {% endfor %}
+
+
+    </div>
+  </div>
+<!-- end product card -->
+
+
+<!-- about us -->
+ <h2 class="text-center my-5 text-light">About Us</h2>
+
+ <section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Column -->
+      <div class="col-lg-6">
+        <h2 class="text-primary mb-4">What are we?</h2>
+        <p>
+          At Power Solution, we are leaders in providing
+          reliable power solutions tailored to industries and
+          businesses’ diverse needs.With years of expertise in
+          the field, we specialize in high-performance industrial
+          generators and UPS systems designed to ensure
+          uninterrupted operations in critical environments.
+          </p>
+        <p>
+          Our product range includes state-of-the-art diesel
+          generators, modular UPS systems and batteries, all
+          engineered for optimal efficiency and reliability.
+          Whether it's emergency backup power for hospitals,
+          sustainable energy for remote locations, or
+          dependable systems for data centers, we deliver
+          solutions you can trust.</p>
+      </div>
+      <!-- Video Column -->
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9">
+          <img src="{% static 'media/maxresdefault.jpg' %}" class="d-block w-100" alt="s">
+          <!-- <iframe 
+            src="https://www.youtube.com/embed/example" 
+            title="Jubaili Bros Corporate Video 2023" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'framework/js/swiper.js' %}"></script>
+<script>
+    new Swiper('#swiper-1', {
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+
+
+    });
+</script>
+{% endblock %}
