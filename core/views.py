@@ -19,3 +19,8 @@ def generator(request):
 def detail(request, id):
     
     return render(request, 'pages/Detail.html')
+
+
+def contact(req):
+
+    return render(req, "pages/contact.html")
