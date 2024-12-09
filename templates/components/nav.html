@@ -2,7 +2,7 @@
 <style>
      .dropdown:hover .dropdown-menu {
       display: block; /* Show dropdown */
-      margin-top: 0; /* Remove any unwanted spacing */
+      {% comment %} margin-top: 0; /* Remove any unwanted spacing */ {% endcomment %}
     }
 
     /* Optional: Add a smooth animation */
@@ -10,7 +10,7 @@
       transition: all 0.3s ease;
     }
 </style>
-<nav  style="background-color: #032931" class="navbar navbar-expand-lg navbar-dark ">
+<nav  style="background-color: #032931; z-index:3000;" class="navbar navbar-expand-lg navbar-dark position-fixed t-0 w-100 ">
     <div class="container-fluid">
       <!-- Logo -->
       <a href="{% url "index" %}" class="text-decoration-none " >
@@ -24,34 +24,59 @@
       <!-- Navigation Links -->
       <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto  ">
-            <li class="nav-item" >
-                <a class="nav-link active" aria-current="page" href="{% url "index" %}">Home</a>
-              </li>
-
-            
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  UPS
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
           
+          
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {{UPS}} "
+            href="{% url 'UPS' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                UPS
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'UPS' %}" for="UPS" >Go to UPS</a></li>
+
+              <li><label class="dropdown-item" href="#" for="UPS" >Search UPS</label></li>
+              <li>
+                    <form action="{% url 'UPS' %}" class="d-flex p-3" method="post"  role="search">
+                    {% csrf_token %}
+                    <input 
+                    class="form-control me-2" 
+                    type="search" 
+                    placeholder="Search" 
+                    name="search" 
+                    id="UPS"
+                    aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit">
+                            <svg 
+                            
+                    width="20px"
+                    height="20px"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+              </form>
+            </li>
+
+            </ul>
+          </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link  {{generator}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Generators
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="{% url 'generator' %}" for="generator" >Go to Generators</a></li>
+                  <li><label class="dropdown-item" href="#" for="generator" >Search Generator</label></li>
                   <li>
-                        <form class="d-flex p-3" method="post"  role="search">
+
+                        <form class="d-flex p-3" method="post" action="{% url 'generator' %}"  role="search">
                         {% csrf_token %}
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input 
+                        class="form-control me-2" 
+                        type="search" 
+                        placeholder="Search" 
+                        name="search" 
+                        id="generator"
+                        aria-label="Search">
                             <button class="btn btn-outline-secondary" type="submit">
                                 <svg 
                                 
@@ -59,22 +84,82 @@
                         height="20px"
                                 viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                     </button>
-                  </form></li>
+                  </form>
+                </li>
                
                 </ul>
               </li>
-          
-          <li class="nav-item">
-            <a class="nav-link " href="{% url "about" %}">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="{% url 'contact' %}">Contact</a>
-          </li>
-          
          
+         {% comment %}  {% endcomment %}
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {{accessories}} "
+          href="{% url 'accessories' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          accessories 
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'accessories' %}#accessories" >accessories</a></li>
+            <li><a class="dropdown-item" href="{% url 'accessories' %}#ups" >UPS</a></li>
+
+            <li> <a class="dropdown-item" href="{% url 'accessories' %}#generator"  >Generator</a><li>
+        
+
+          </ul>
+        </li>
+         {% comment %}  {% endcomment %}
+          <li class="nav-item" >
+            <a class="nav-link {{home}}" aria-current="page" href="{% url "index" %}#home">Home</a>
+          </li>
+
+             
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'index' %}#about">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'index' %}#contact-us">Contact</a>
+          </li>
+    
+              <li class="nav-item">
+                <a class="nav-link " href="{% url 'services' %}">Services</a>
+              </li>
+
+{% comment %}  {% endcomment %}
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <nav  style="background-color: #032931;opacity:0;" class="navbar navbar-expand-lg navbar-dark  ">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a href="{% url "index" %}" class="text-decoration-none " >
+        <img src="{% static 'media/logo_large.webp' %}" style="max-width: 80px;max-height: 80px;border-radius: 10px;" alt="Logo" class="img-fluid">
+    </a>
+      <!-- Burger Menu -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto  ">
+          
+          
+
+
+         
+         {% comment %}  {% endcomment %}
+          <li class="nav-item" >
+            <a class="nav-link {{home}}" aria-current="page" href="{% url "index" %}">Home</a>
+          </li>
+
+             
+          
+
+{% comment %}  {% endcomment %}
+
         </ul>
       </div>
     </div>

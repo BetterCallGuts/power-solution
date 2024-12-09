@@ -59,7 +59,7 @@
 {% block content %}
 
 
-
+<section  id="home">
 <div class="swiper" id="swiper-1">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -77,6 +77,7 @@
         </div> 
     <div class="container">
     </div>
+</section>
 <!--  -->
 <h2 class="text-center my-5 text-light">Featured Products</h2>
 <div class="container my-5">
@@ -99,20 +100,166 @@
 
 
     </div>
-  </div>
+</div>
 <!-- end product card -->
 
 
 <!-- about us -->
- <h2 class="text-center my-5 text-light">About Us</h2>
 
- <section class="py-5 bg-light">
+<style>
+  
+
+    #swiper-2  .swiper-slide {
+      
+      font-size: 18px;
+
+      height: 155px;
+      background: white;
+      width:100%;
+      align-self: center;
+
+    }
+
+     #swiper-2  .swiper-slide img {
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+</style>
+{% if brands %}
+<div style="background:#032931;"> 
+
+  <h2 class="text-center text-light pt-3" >
+    Brands we deal with
+  </h2>
+  <div class="bg-light pt-1"> </div>
+  <div class="swiper py-5" id="swiper-2" style="background:#032931;">
+    <div class="swiper-wrapper">
+      {% for brand in brands %}
+      <div class="swiper-slide">
+        <img src="{{ brand.img.url }}" alt="{{ brand.name }}">
+      </div>
+      {% endfor %}
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    
+  </div>
+
+
+
+</div>
+{% endif %}
+<h2 class="text-center my-5 text-light" id="about">About Us</h2>
+
+<div  style="background: url({% static 'media/about-vision-main-photo.jpg' %}) center no-repeat; background-size: cover;">
+
+    
+  <div class="container py-5">
+
+      
+      <h1 class="display-1 fw-normal " style="text-shadow: 1px 1px 2px rgb(0, 0, 0);"> <span style="color:#89B2D4;">VISION &</span> <br> <span style="color:white;">MISSION</span></h1>
+  </div>
+</div>
+
+<div  style="background-color: #032931;">
+
+  <div class="container d-flex flex-column  flex-md-row justify-content-between py-5" style="background-color: #032931;">
+      <div  class="px-3" style="border-left:#89B2D4 2px solid ;" >
+      <h2 style="color:#89B2D4;">Vision</h2>
+      <p style="color: white;">To be the global leader in innovative and sustainable
+          power solutions, driving progress and resilience across
+          industries, communities, and environments by delivering
+          unparalleled reliability and efficiency.
+          Our vision reflects our commitment to staying at the
+          forefront of technology, ensuring that our solutions
+          empower businesses and individuals to thrive in a world
+          that never stops moving.</p>
+  </div>
+
+  <div style="border-left:#89B2D4 2px solid ;" class="px-3">
+      <h2 style="color:#89B2D4;">Mission</h2>
+      <p style="color: white;">Building trust through our unwavering commitment to
+          quality, reliability, and innovation.
+          To deliver reliable, innovative, and energy-efficient power
+          solutions that empower businesses and communities to
+          achieve uninterrupted operations. We are dedicated to:
+          Providing high-quality generators and UPS systems tailored to
+          diverse needs.
+          Ensuring exceptional customer service through
+          comprehensive support and expertise.
+          Building trust through our unwavering commitment to
+          quality, reliability, and innovation.</p>
+      </div>
+  </div>
+  
+</div>
+
+<div style="background: url('{% static 'media/about-vision-sec-photo.jpg' %}') center no-repeat fixed; background-size: cover; ">
+  <div class="container py-5">
+
+      
+      <h1 class="display-1 fw-normal text-end" style="text-shadow: 1px 1px 2px rgb(0, 0, 0);"> <span style="color:#89B2D4;">Our</span> <br> <span style="color:white;">GOALS</span></h1>
+  </div>
+</div>
+
+<div style="background-color: #032931;">
+
+  <ul class="container py-5 flex-column   d-flex">
+      <div style=" border-left: 3px #89B2D4 solid;">
+          <h2 style="color:#5E84B4; border-bottom: #89B2D4 3px solid;" class="p-3">Expand Global Reach
+          </h2>
+          <p style="color: aliceblue;" class="p-3">
+              Strengthen our presence in existing markets while <br>
+              exploring opportunities in emerging regions to serve a <br>
+              wider customer base.ddddd
+          </p>
+      </div>
+
+<!--  -->
+      <hr>
+ 
+      <div style=" border-left: 3px #89B2D4 solid;">
+          <h2 style="color:#5E84B4; border-bottom: #89B2D4 3px solid;" class="p-3">Enhance Reliability and Uptime
+          </h2>
+          <p style="color: aliceblue;" class="p-3">
+              Provide seamless power continuity for critical operations,<br>
+              ensuring businesses and communities thrive without <br>
+              disruption.
+
+          </p>
+      </div>
+
+
+      <hr>
+
+  <!--  -->
+
+      <div style=" border-left: 3px #89B2D4 solid;">
+          <h2 style="color:#5E84B4; border-bottom: #89B2D4 3px solid;" class="p-3">Deliver Exceptional Power Solutions
+          </h2>
+          <p style="color: aliceblue;" class="p-3">
+              Continuously innovate and provide advanced generator <br>
+              and UPS systems to meet the evolving needs of industries <br>
+              and communities.
+          </p>
+      </div>
+<!--  -->
+  </ul>
+</div>
+
+<!-- Bootom section -->
+
+<section class="py-5 " >
   <div class="container">
     <div class="row align-items-center">
       <!-- Text Column -->
       <div class="col-lg-6">
-        <h2 class="text-primary mb-4">What are we?</h2>
-        <p>
+        <h2 class="text-light mb-4">What are we?</h2>
+        <hr>
+        <p class="text-light text-shadow-lg">
           At Power Solution, we are leaders in providing
           reliable power solutions tailored to industries and
           businesses’ diverse needs.With years of expertise in
@@ -120,7 +267,7 @@
           generators and UPS systems designed to ensure
           uninterrupted operations in critical environments.
           </p>
-        <p>
+        <p class="text-light">
           Our product range includes state-of-the-art diesel
           generators, modular UPS systems and batteries, all
           engineered for optimal efficiency and reliability.
@@ -144,28 +291,112 @@
       </div>
     </div>
   </div>
+
+{% comment %}  {% endcomment %}
   <div class="d-flex justify-content-center">
-<style>
-  .about__link{
-    transition: .4s;
-    text-decoration: none;
-    padding: 7px 15px;
-    border-radius: 10px;
+    <style>
+      .about__link{
+        transition: .4s;
+        text-decoration: none;
+        padding: 7px 15px;
+        border-radius: 10px;
+    
+        box-shadow: 2px 4px 3px black;
+        background-color: #032931;
+      }
+      .about__link:hover{
+        transform: translateY(-5px);
+    
+      }
+    </style>
+        <a 
+        href="{% url 'services' %}"
+        class="about__link mt-5   d-flex   text-light" style="width: fit-content; justify-content: center; ">Learn more ?</a>
+      </div>
 
-    box-shadow: 2px 4px 3px black;
-    background-color: #032931;
-  }
-  .about__link:hover{
-    transform: translateY(-5px);
-
-  }
-</style>
-    <a 
-    href="{% url 'about' %}"
-    class="about__link mt-5   d-flex   text-light" style="width: fit-content; justify-content: center; ">Learn more ?</a>
-  </div>
+      {% comment %}  {% endcomment %}
 </section>
- 
+
+{% comment %} Start of Contact us {% endcomment %}
+
+<h2 id='contact-us' class="text-center text-light py-3" style="background: #032931e9;">Contact us</h2>
+<div style="background: url({% static 'media/contact_us.jpg' %}) no-repeat center center fixed; background-size: cover;">
+
+  <div class="container d-flex justify-content-between">
+      <div style="align-self: center;">
+      
+      </div>
+
+      
+      {% include 'components/form.html' %}
+  </div>
+</div>
+<div class="bg-dark py-3"></div>
+<div class="">
+
+  <h2 class="text-center fw-bold" style="color: #032931e9;">Or you can call us</h2>
+  <hr>
+  <div class="container ">
+      <div class="d-flex justify-content-around flex-column flex-md-row gap-3 align-items-center text-dark">
+          <div class="left d-flex flex-column align-items-center gap-3" width="100%">
+              <svg fill="#000000" height="50%" width="50%" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 93.465 93.465" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M92.781,74.906L73.302,55.428c-0.896-0.896-2.349-0.896-3.244,0L59.825,65.661c-2.782-0.769-10.176-3.475-18.683-11.979 c-8.826-8.827-12.402-17.625-13.289-20.113l10.173-10.173c0.431-0.43,0.673-1.014,0.673-1.623s-0.242-1.192-0.673-1.622 L18.547,0.672c-0.896-0.896-2.349-0.896-3.245,0L3.916,12.059c-0.148,0.147-0.273,0.313-0.376,0.495l-0.021,0.024 c-9.065,11.141,0.009,36.045,20.66,56.697c14.696,14.695,32.502,24.19,45.365,24.19c4.592,0,8.373-1.163,11.242-3.458l0.268-0.184 c0.117-0.08,0.225-0.169,0.324-0.27L92.781,78.15c0.431-0.431,0.673-1.015,0.673-1.622C93.454,75.92,93.211,75.337,92.781,74.906z"></path> </g> </g></svg>
+              
+              <h3 class="text-dark">+201223703588</h3>
+          </div>
+          <div class="right d-flex flex-column align-items-center gap-3 justify-content-center" width="100%">
+              <svg fill="#000000" height="50%" width="50%" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M453.068,45.125H176.432C174.37,19.9,153.201,0,127.459,0h-21.343C80.353,0,59.17,19.924,57.129,45.171 c-25.972,0.953-46.808,22.366-46.808,48.565v369.653c0,26.805,21.807,48.611,48.611,48.611h394.136 c26.805,0,48.611-21.807,48.611-48.611V93.736C501.679,66.932,479.873,45.125,453.068,45.125z M478.668,463.389 c0,14.116-11.484,25.6-25.6,25.6H58.932c-14.116,0-25.6-11.484-25.6-25.6V93.736c0-13.449,10.428-24.501,23.621-25.516v352.172 c0,27.103,22.055,49.152,49.164,49.152h21.343c27.103,0,49.152-22.049,49.152-49.152V157.819c0-6.354-5.152-11.506-11.506-11.506 c-6.353,0-11.506,5.151-11.506,11.506v262.573c0,14.414-11.727,26.141-26.141,26.141h-21.343 c-14.42,0-26.152-11.727-26.152-26.141V49.164c0-14.42,11.732-26.152,26.152-26.152h21.343c14.413,0,26.141,11.732,26.141,26.152 v42.583c0,6.355,5.152,11.506,11.506,11.506c6.353,0,11.506-5.151,11.506-11.506V68.136h276.457c14.116,0,25.6,11.484,25.6,25.6 V463.389z"></path> </g> </g> <g> <g> <path d="M442.115,107.025h-228.41c-6.353,0-11.506,5.151-11.506,11.506v66.433c0,6.355,5.152,11.506,11.506,11.506h228.41 c6.353,0,11.506-5.151,11.506-11.506v-66.433C453.621,112.176,448.468,107.025,442.115,107.025z M430.609,173.459H225.211v-43.422 h205.398V173.459z"></path> </g> </g> <g> <g> <path d="M165.106,109.591c-6.353,0-11.506,5.151-11.506,11.506v3.452c0,6.355,5.152,11.506,11.506,11.506 c6.353,0,11.506-5.151,11.506-11.506v-3.452C176.611,114.742,171.459,109.591,165.106,109.591z"></path> </g> </g> <g> <g> <path d="M238.097,216.95c-19.794,0-35.898,16.099-35.898,35.886c0,19.794,16.103,35.898,35.898,35.898 c19.793,0,35.896-16.104,35.896-35.898C273.995,233.049,257.892,216.95,238.097,216.95z M238.097,265.722 c-7.106,0-12.886-5.78-12.886-12.886c0-7.099,5.78-12.875,12.886-12.875c7.105,0,12.885,5.776,12.885,12.875 C250.984,259.942,245.202,265.722,238.097,265.722z"></path> </g> </g> <g> <g> <path d="M327.91,216.95c-19.787,0-35.886,16.099-35.886,35.886c0,19.794,16.099,35.898,35.886,35.898 c19.794,0,35.898-16.104,35.898-35.898C363.808,233.049,347.704,216.95,327.91,216.95z M327.91,265.722 c-7.1,0-12.875-5.78-12.875-12.886c0-7.099,5.776-12.875,12.875-12.875c7.106,0,12.886,5.776,12.886,12.875 C340.796,259.942,335.016,265.722,327.91,265.722z"></path> </g> </g> <g> <g> <path d="M417.735,216.95c-19.794,0-35.898,16.099-35.898,35.886c0,19.794,16.103,35.898,35.898,35.898 c19.787,0,35.885-16.104,35.885-35.898C453.621,233.049,437.523,216.95,417.735,216.95z M417.735,265.722 c-7.106,0-12.886-5.78-12.886-12.886c0-7.099,5.78-12.875,12.886-12.875c7.099,0,12.874,5.776,12.874,12.875 C430.609,259.942,424.833,265.722,417.735,265.722z"></path> </g> </g> <g> <g> <path d="M238.097,302.448c-19.794,0-35.898,16.103-35.898,35.898c0,19.794,16.103,35.898,35.898,35.898 c19.793,0,35.896-16.104,35.896-35.898C273.994,318.553,257.892,302.448,238.097,302.448z M238.097,351.232 c-7.106,0-12.886-5.78-12.886-12.886s5.78-12.886,12.886-12.886c7.105,0,12.885,5.78,12.885,12.886 S245.202,351.232,238.097,351.232z"></path> </g> </g> <g> <g> <path d="M327.91,302.448c-19.787,0-35.886,16.103-35.886,35.898c0,19.794,16.099,35.898,35.886,35.898 c19.794,0,35.898-16.104,35.898-35.898C363.808,318.553,347.704,302.448,327.91,302.448z M327.91,351.232 c-7.1,0-12.875-5.78-12.875-12.886s5.776-12.886,12.875-12.886c7.106,0,12.886,5.78,12.886,12.886S335.016,351.232,327.91,351.232 z"></path> </g> </g> <g> <g> <path d="M417.735,302.448c-19.794,0-35.898,16.103-35.898,35.898c0,19.794,16.103,35.898,35.898,35.898 c19.787,0,35.885-16.104,35.885-35.898C453.619,318.553,437.523,302.448,417.735,302.448z M417.735,351.232 c-7.106,0-12.886-5.78-12.886-12.886s5.78-12.886,12.886-12.886c7.099,0,12.874,5.78,12.874,12.886 S424.833,351.232,417.735,351.232z"></path> </g> </g> <g> <g> <path d="M238.097,387.946c-19.794,0-35.898,16.103-35.898,35.898c0,19.794,16.103,35.898,35.898,35.898 c19.793,0,35.896-16.104,35.896-35.898C273.994,404.051,257.892,387.946,238.097,387.946z M238.097,436.73 c-7.106,0-12.886-5.78-12.886-12.886c0-7.105,5.78-12.886,12.886-12.886c7.105,0,12.885,5.78,12.885,12.886 C250.984,430.95,245.202,436.73,238.097,436.73z"></path> </g> </g> <g> <g> <path d="M327.91,387.946c-19.787,0-35.886,16.103-35.886,35.898c0,19.794,16.099,35.898,35.886,35.898 c19.794,0,35.898-16.104,35.898-35.898C363.808,404.051,347.704,387.946,327.91,387.946z M327.91,436.73 c-7.1,0-12.875-5.78-12.875-12.886c0-7.105,5.776-12.886,12.875-12.886c7.106,0,12.886,5.78,12.886,12.886 S335.016,436.73,327.91,436.73z"></path> </g> </g> <g> <g> <path d="M417.735,387.946c-19.794,0-35.898,16.103-35.898,35.898c0,19.794,16.103,35.898,35.898,35.898 c19.787,0,35.885-16.104,35.885-35.898C453.619,404.051,437.523,387.946,417.735,387.946z M417.735,436.73 c-7.106,0-12.886-5.78-12.886-12.886c0-7.105,5.78-12.886,12.886-12.886c7.099,0,12.874,5.78,12.874,12.886 C430.609,430.95,424.833,436.73,417.735,436.73z"></path> </g> </g> </g></svg>            
+              <h3 class="text-dark">+20226774710</h3>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="bg-dark py-3"></div>
+<!-- sales section -->
+<div style="background: url({% static 'media/sales.webp' %}) no-repeat center center fixed; background-size: cover;">
+
+  <div class="container d-flex justify-content-between">
+      <div class="text-light p-md-5 m-md-5 m-2 p-2 my-5  rounded-3" style="background-color: rgba(3, 13, 11, 0.872);"> 
+          <h2 class="">Or Contact us via Email</h2>
+         <p class="mt-5 fw-bold md-fs-3   d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between ">  <svg height="70px" width="70px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#000000;} </style> <g> <path class="st0" d="M123.671,288.694c1.743,0.582,3.542,0.877,5.347,0.877h0.002c3.898,0,7.694-1.405,10.685-3.944 c6.502-5.52,9.577-14.868,4.827-44.394c-4.204-26.18-10.716-39.891-21.77-45.838c-2.42-1.304-4.983-2.174-7.638-2.593 c0.084-48.796,16.805-93.889,45.986-123.881c24.926-25.629,57.736-39.169,94.888-39.169c37.152,0,69.965,13.54,94.891,39.169 c29.181,29.992,45.902,75.077,45.986,123.881c-2.655,0.419-5.218,1.289-7.638,2.593c-11.054,5.947-17.564,19.658-21.77,45.838 c-1.797,11.18-2.535,19.829-2.25,26.39c-8.6,4.604-23.986,10.31-49.569,12.523c-4.031-6.716-11.219-10.846-18.998-10.846h-14.759 c-12.273,0-22.257,9.984-22.257,22.259c0,12.275,9.984,22.259,22.257,22.259h14.759c8.682,0,16.485-4.992,20.144-12.803 c23.268-1.933,42.473-6.716,57.11-14.239c2.735,1.832,5.854,2.795,9.076,2.795c1.819,0,3.62-0.295,5.351-0.877 c11.772-3.921,36.599-30.753,38.2-88.688c1.642-59.324-18.154-114.658-54.314-151.831C341.563,16.661,301.375,0,255.999,0 c-45.374,0-85.562,16.661-116.218,48.175c-36.158,37.174-55.955,92.507-54.313,151.831 C87.07,257.941,111.897,284.773,123.671,288.694z"></path> <path class="st0" d="M452.727,457.031c-3.758-20.644-17.384-38.198-36.512-46.995l-80.048-32.71 c-12.762-5.862-21.009-18.726-21.009-32.772v-6.452l-2.11,0.73c-5.375,1.864-10.891,2.803-16.398,2.803h-14.759 c-27.612,0-50.077-22.461-50.077-50.077c0-27.608,22.465-50.07,50.077-50.07h14.759c10.305,0,20.204,3.129,28.628,9.053 l0.532,0.373l0.64-0.109c17.624-2.904,25.745-7.516,28.82-9.759l5.264-7.694c5.153-16.561,7.766-32.112,7.766-46.219 c0-74.697-47.23-128.912-112.302-128.912c-65.071,0-112.299,54.216-112.299,128.912c0,61.808,50.2,129.51,50.475,129.751 c1.768,5.132,2.665,10.481,2.665,15.885v11.786c0,14.045-8.248,26.902-20.947,32.741l-80.17,32.771 c-19.076,8.766-32.704,26.328-36.471,47.127L55.003,512h401.995L452.727,457.031z"></path> </g> </g></svg>
+         <span >sales@powersolution-eg.com</span></p>
+         <p class="mt-5 fw-bold  md-fs-3  d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between"> <svg  height="70px" width="70px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M953.6 234.666667L768 418.133333s-55.466667 0-110.933333-55.466666-55.466667-110.933333-55.466667-110.933334l185.6-185.6c-104.533333-25.6-230.4 8.533333-307.2 85.333334-115.2 115.2-12.8 262.4-42.666667 292.266666C275.2 612.266667 108.8 740.266667 104.533333 746.666667c-49.066667 49.066667-51.2 128-4.266666 174.933333 46.933333 46.933333 125.866667 44.8 174.933333-4.266667 6.4-6.4 142.933333-179.2 302.933333-339.2 29.866667-29.866667 170.666667 78.933333 290.133334-38.4 74.666667-76.8 110.933333-200.533333 85.333333-305.066666zM200.533333 876.8c-29.866667 0-53.333333-23.466667-53.333333-53.333333C147.2 791.466667 170.666667 768 200.533333 768s53.333333 23.466667 53.333334 53.333333-23.466667 55.466667-53.333334 55.466667z" fill="white"></path></g></svg>
+         <span >tech.sup@powersolution-eg.com</span></p>
+         <p class="mt-5 fw-bold  md-fs-3  d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between">  <svg height="70px" width="70px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#000000;} </style> <g> <path class="st0" d="M123.671,288.694c1.743,0.582,3.542,0.877,5.347,0.877h0.002c3.898,0,7.694-1.405,10.685-3.944 c6.502-5.52,9.577-14.868,4.827-44.394c-4.204-26.18-10.716-39.891-21.77-45.838c-2.42-1.304-4.983-2.174-7.638-2.593 c0.084-48.796,16.805-93.889,45.986-123.881c24.926-25.629,57.736-39.169,94.888-39.169c37.152,0,69.965,13.54,94.891,39.169 c29.181,29.992,45.902,75.077,45.986,123.881c-2.655,0.419-5.218,1.289-7.638,2.593c-11.054,5.947-17.564,19.658-21.77,45.838 c-1.797,11.18-2.535,19.829-2.25,26.39c-8.6,4.604-23.986,10.31-49.569,12.523c-4.031-6.716-11.219-10.846-18.998-10.846h-14.759 c-12.273,0-22.257,9.984-22.257,22.259c0,12.275,9.984,22.259,22.257,22.259h14.759c8.682,0,16.485-4.992,20.144-12.803 c23.268-1.933,42.473-6.716,57.11-14.239c2.735,1.832,5.854,2.795,9.076,2.795c1.819,0,3.62-0.295,5.351-0.877 c11.772-3.921,36.599-30.753,38.2-88.688c1.642-59.324-18.154-114.658-54.314-151.831C341.563,16.661,301.375,0,255.999,0 c-45.374,0-85.562,16.661-116.218,48.175c-36.158,37.174-55.955,92.507-54.313,151.831 C87.07,257.941,111.897,284.773,123.671,288.694z"></path> <path class="st0" d="M452.727,457.031c-3.758-20.644-17.384-38.198-36.512-46.995l-80.048-32.71 c-12.762-5.862-21.009-18.726-21.009-32.772v-6.452l-2.11,0.73c-5.375,1.864-10.891,2.803-16.398,2.803h-14.759 c-27.612,0-50.077-22.461-50.077-50.077c0-27.608,22.465-50.07,50.077-50.07h14.759c10.305,0,20.204,3.129,28.628,9.053 l0.532,0.373l0.64-0.109c17.624-2.904,25.745-7.516,28.82-9.759l5.264-7.694c5.153-16.561,7.766-32.112,7.766-46.219 c0-74.697-47.23-128.912-112.302-128.912c-65.071,0-112.299,54.216-112.299,128.912c0,61.808,50.2,129.51,50.475,129.751 c1.768,5.132,2.665,10.481,2.665,15.885v11.786c0,14.045-8.248,26.902-20.947,32.741l-80.17,32.771 c-19.076,8.766-32.704,26.328-36.471,47.127L55.003,512h401.995L452.727,457.031z"></path> </g> </g></svg>
+         <span >info@powersolution-eg.com</span></p>
+         <p class="mt-5 fw-bold  md-fs-3  d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between">  <svg height="70px" width="70px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#000000;} </style> <g> <path class="st0" d="M123.671,288.694c1.743,0.582,3.542,0.877,5.347,0.877h0.002c3.898,0,7.694-1.405,10.685-3.944 c6.502-5.52,9.577-14.868,4.827-44.394c-4.204-26.18-10.716-39.891-21.77-45.838c-2.42-1.304-4.983-2.174-7.638-2.593 c0.084-48.796,16.805-93.889,45.986-123.881c24.926-25.629,57.736-39.169,94.888-39.169c37.152,0,69.965,13.54,94.891,39.169 c29.181,29.992,45.902,75.077,45.986,123.881c-2.655,0.419-5.218,1.289-7.638,2.593c-11.054,5.947-17.564,19.658-21.77,45.838 c-1.797,11.18-2.535,19.829-2.25,26.39c-8.6,4.604-23.986,10.31-49.569,12.523c-4.031-6.716-11.219-10.846-18.998-10.846h-14.759 c-12.273,0-22.257,9.984-22.257,22.259c0,12.275,9.984,22.259,22.257,22.259h14.759c8.682,0,16.485-4.992,20.144-12.803 c23.268-1.933,42.473-6.716,57.11-14.239c2.735,1.832,5.854,2.795,9.076,2.795c1.819,0,3.62-0.295,5.351-0.877 c11.772-3.921,36.599-30.753,38.2-88.688c1.642-59.324-18.154-114.658-54.314-151.831C341.563,16.661,301.375,0,255.999,0 c-45.374,0-85.562,16.661-116.218,48.175c-36.158,37.174-55.955,92.507-54.313,151.831 C87.07,257.941,111.897,284.773,123.671,288.694z"></path> <path class="st0" d="M452.727,457.031c-3.758-20.644-17.384-38.198-36.512-46.995l-80.048-32.71 c-12.762-5.862-21.009-18.726-21.009-32.772v-6.452l-2.11,0.73c-5.375,1.864-10.891,2.803-16.398,2.803h-14.759 c-27.612,0-50.077-22.461-50.077-50.077c0-27.608,22.465-50.07,50.077-50.07h14.759c10.305,0,20.204,3.129,28.628,9.053 l0.532,0.373l0.64-0.109c17.624-2.904,25.745-7.516,28.82-9.759l5.264-7.694c5.153-16.561,7.766-32.112,7.766-46.219 c0-74.697-47.23-128.912-112.302-128.912c-65.071,0-112.299,54.216-112.299,128.912c0,61.808,50.2,129.51,50.475,129.751 c1.768,5.132,2.665,10.481,2.665,15.885v11.786c0,14.045-8.248,26.902-20.947,32.741l-80.17,32.771 c-19.076,8.766-32.704,26.328-36.471,47.127L55.003,512h401.995L452.727,457.031z"></path> </g> </g></svg>
+         <span >bus.dev@powersolution-eg.com</span></p>
+      </div>
+      
+      <div style="align-self: center;">
+      
+      </div>
+
+  </div>
+</div>
+<!-- address section     -->
+<div class=" py-3"></div>
+<div class="bg-dark">
+
+<h2 class="text-center fw-bold text-light">Or Give us a visit</h2>
+<hr>
+<div class="container ">
+  <div class="d-flex justify-content-around flex-column flex-md-row gap-3 align-items-center text-dark">
+      <div class="left d-flex flex-column align-items-center gap-3" width="100%">
+          <svg width="70px" height="70px" viewBox="0 0 8.4666669 8.4666669" id="svg8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs id="defs2"></defs> <g id="layer1" transform="translate(0,-288.53332)"> <path d="m 4.2324219,288.79688 c -1.6042437,0 -2.9101556,1.30591 -2.9101563,2.91015 -10e-7,2.82277 2.7460938,4.96875 2.7460938,4.96875 a 0.26460978,0.26460978 0 0 0 0.3300781,0 c 0,0 2.7460996,-2.14598 2.7460937,-4.96875 -3.4e-6,-1.60424 -1.3078657,-2.91015 -2.9121093,-2.91015 z m 0,0.52929 c 1.3182605,0 2.3828097,1.0626 2.3828125,2.38086 4.8e-6,2.30926 -2.0910618,4.13374 -2.3808594,4.38086 -0.2884142,-0.24588 -2.3828134,-2.0707 -2.3828125,-4.38086 5e-7,-1.31826 1.0625988,-2.38086 2.3808594,-2.38086 z" id="path929" style="color:#ffffff;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#ffffff;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#ffffff;solid-opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"></path> <path d="m 4.2324219,290.38477 c -0.7274912,0 -1.3222633,0.59477 -1.3222657,1.32226 -4.5e-6,0.7275 0.5947697,1.32422 1.3222657,1.32422 0.727496,0 1.3242233,-0.59672 1.3242187,-1.32422 -2.3e-6,-0.72749 -0.5967275,-1.32226 -1.3242187,-1.32226 z m 0,0.52929 c 0.4415089,0 0.7949204,0.35146 0.7949219,0.79297 2.7e-6,0.44151 -0.35341,0.79492 -0.7949219,0.79492 -0.441512,0 -0.7929715,-0.35341 -0.7929688,-0.79492 1.4e-6,-0.44151 0.3514598,-0.79297 0.7929688,-0.79297 z" id="circle931" style="color:#ffffff;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#ffffff;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#ffffff;solid-opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"></path> </g> </g></svg>
+          
+          <h3 class="text-light fs-4 text-center w-75">13 Abdel Aziz Talaat St. Nasr City, Cairo.</h3>
+      </div>
+      <div class="right d-flex flex-column align-items-center gap-3 justify-content-center" width="100%">
+          <svg width="70px" height="70px"  viewBox="0 0 8.4666669 8.4666669" id="svg8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs id="defs2"></defs> <g id="layer1" transform="translate(0,-288.53332)"> <path d="m 4.2324219,288.79688 c -1.6042437,0 -2.9101556,1.30591 -2.9101563,2.91015 -10e-7,2.82277 2.7460938,4.96875 2.7460938,4.96875 a 0.26460978,0.26460978 0 0 0 0.3300781,0 c 0,0 2.7460996,-2.14598 2.7460937,-4.96875 -3.4e-6,-1.60424 -1.3078657,-2.91015 -2.9121093,-2.91015 z m 0,0.52929 c 1.3182605,0 2.3828097,1.0626 2.3828125,2.38086 4.8e-6,2.30926 -2.0910618,4.13374 -2.3808594,4.38086 -0.2884142,-0.24588 -2.3828134,-2.0707 -2.3828125,-4.38086 5e-7,-1.31826 1.0625988,-2.38086 2.3808594,-2.38086 z" id="path929" style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"></path> <path d="m 4.2324219,290.38477 c -0.7274912,0 -1.3222633,0.59477 -1.3222657,1.32226 -4.5e-6,0.7275 0.5947697,1.32422 1.3222657,1.32422 0.727496,0 1.3242233,-0.59672 1.3242187,-1.32422 -2.3e-6,-0.72749 -0.5967275,-1.32226 -1.3242187,-1.32226 z m 0,0.52929 c 0.4415089,0 0.7949204,0.35146 0.7949219,0.79297 2.7e-6,0.44151 -0.35341,0.79492 -0.7949219,0.79492 -0.441512,0 -0.7929715,-0.35341 -0.7929688,-0.79492 1.4e-6,-0.44151 0.3514598,-0.79297 0.7929688,-0.79297 z" id="circle931" style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"></path> </g> </g></svg>
+          <h3 class="text-light fs-4 text-center w-75">3 Saudi building Cornish el nil, Asyut, Egypt.</h3>
+      </div>
+  </div>
+</div>
+</div>
+<div class=" py-3"></div>
+<!--  -->
+
+
 
 {% endblock %}
 
@@ -189,5 +420,26 @@
 
 
     });
+
+    // 
+    {% if brands %}
+    new Swiper('#swiper-2', {
+      
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+      
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        
+        slidesPerView: 4,
+        spaceBetween: 30,
+        centeredSlides: true,
+
+    });
+    {% endif %}
 </script>
 {% endblock %}
