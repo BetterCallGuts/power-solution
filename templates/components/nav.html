@@ -13,7 +13,7 @@
 <nav  style="background-color: #032931; z-index:3000;" class="navbar navbar-expand-lg navbar-dark position-fixed t-0 w-100 ">
     <div class="container-fluid">
       <!-- Logo -->
-      <a href="{% url "index" %}" class="text-decoration-none " >
+      <a href="{% url "index" %}#" class="text-decoration-none " >
         <img src="{% static 'media/logo_large.webp' %}" style="max-width: 80px;max-height: 80px;border-radius: 10px;" alt="Logo" class="img-fluid">
     </a>
       <!-- Burger Menu -->
@@ -30,21 +30,21 @@
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle {{UPS}} "
-            href="{% url 'UPS' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            href="{% url 'UPS' %}#ups" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 UPS
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'UPS' %}" for="UPS" >Go to UPS</a></li>
+              <li><a class="dropdown-item" href="{% url 'UPS' %}#ups" for="UPS" >Go to UPS</a></li>
 
               <li><label class="dropdown-item" href="#" for="UPS" >Search UPS</label></li>
               <li>
-                    <form action="{% url 'UPS' %}" class="d-flex p-3" method="post"  role="search">
-                    {% csrf_token %}
+                    <form action="{% url 'UPS' %}" class="d-flex p-3" method="get"  role="search">
+
                     <input 
                     class="form-control me-2" 
                     type="search" 
                     placeholder="Search" 
-                    name="search" 
+                    name="q" 
                     id="UPS"
                     aria-label="Search">
                         <button class="btn btn-outline-secondary" type="submit">
@@ -64,28 +64,8 @@
                   Generators
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'generator' %}" for="generator" >Go to Generators</a></li>
-                  <li><label class="dropdown-item" href="#" for="generator" >Search Generator</label></li>
-                  <li>
-
-                        <form class="d-flex p-3" method="post" action="{% url 'generator' %}"  role="search">
-                        {% csrf_token %}
-                        <input 
-                        class="form-control me-2" 
-                        type="search" 
-                        placeholder="Search" 
-                        name="search" 
-                        id="generator"
-                        aria-label="Search">
-                            <button class="btn btn-outline-secondary" type="submit">
-                                <svg 
-                                
-                        width="20px"
-                        height="20px"
-                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                    </button>
-                  </form>
-                </li>
+                  <li><a class="dropdown-item" href="{% url 'generator-poso' %}" for="generator" >PO-SO</a></li>
+                  <li><a class="dropdown-item" href="{% url 'generator-ferbo' %}#ferbo" for="generator" >Ferbo</a></li>
                
                 </ul>
               </li>
@@ -93,14 +73,13 @@
          {% comment %}  {% endcomment %}
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle {{accessories}} "
-          href="{% url 'accessories' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           accessories 
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{% url 'accessories' %}#accessories" >accessories</a></li>
-            <li><a class="dropdown-item" href="{% url 'accessories' %}#ups" >UPS</a></li>
+            <li><a class="dropdown-item" href="{% url 'accessories-ups' %}#ups" >UPS</a></li>
 
-            <li> <a class="dropdown-item" href="{% url 'accessories' %}#generator"  >Generator</a><li>
+            <li> <a class="dropdown-item" href="{% url 'accessories-generator' %}#generator"  >Generator</a><li>
         
 
           </ul>

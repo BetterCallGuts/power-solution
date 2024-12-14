@@ -21,9 +21,13 @@ class Brand(models.Model):
 # 
 # 
 
-
+class Page(models.Model):
+    name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
 
 class Product(models.Model):
+    page        = models.ForeignKey(Page, on_delete=models.SET_NULL, null=True, blank=True)
     name        = models.CharField(max_length=100)
     description = models.TextField()
 
@@ -50,8 +54,53 @@ class ProductImage(models.Model):
 
         return f"{self.image}"
 
+
+class ProductHighLight(models.Model):
+    
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    name    = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return f"{self.product}"
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
     
     def __str__(self):
         return self.name
+
+
+class RequestInfo(models.Model):
+
+    name        = models.CharField(max_length=100)
+    email       = models.EmailField()
+    phone       = models.CharField(max_length=100)
+    company     = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    prod        = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        )
+
+    def __str__(self):
+        return  f"{self.name} | request"
+    
+
+
+class Ferbo(models.Model):
+    name        = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    image       = models.ImageField(upload_to='ferbo', blank=True, null=True)
+    xlsx        = models.FileField(upload_to='ferbo', blank=True, null=True)
+    slug        = models.SlugField(max_length=100,blank=True, null=True, unique=True)
+
+    def save(self, *args, **kwargs):
+        
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return  f"{self.name}"

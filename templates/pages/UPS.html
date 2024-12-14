@@ -55,16 +55,15 @@
 
 {% block content %}
 
-<form id="accessories" method="get" style="background:url({% static 'media/accesories.webp' %}) no-repeat center center fixed; background-size: cover;">
+<form id="ups_form" method="get" style="background:url({% static 'media/accesories.webp' %}) no-repeat center center fixed; background-size: cover;">
 
 <div class="container text-center py-5 d-flex flex-column justify-content-center align-items-center gap-3">
-  <label for="search " class="form-label fs-5 fw-bold">Search for ups accessories</label>
-  <input 
-  type="text" 
+  <label for="search " class="form-label fs-5 fw-bold">Search for UPSs</label>
+  <input type="text" 
   id="search"
-  value="{{q}}"
-  name="q" placeholder="Search for ups accessories" 
+  name="q" placeholder="Search for UPs" 
   class="form-control rounded-2 "
+  value="{{q}}"
   style="width: 500px; height: 40px;">
   <button type="submit" style="width:100px" class="btn btn-primary rounded-2 mt-3">Search</button>
 </div>

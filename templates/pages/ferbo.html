@@ -1,0 +1,69 @@
+{% extends 'components/base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}About{% endblock %}
+
+
+{% block css %}
+<style>
+    .brand_card{
+        transition: .4s;
+    }
+    .brand_card:hover{
+        opacity: 0.5;
+        transform: scale(.9);
+        background-color: #032931;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<section id="ferbo">
+    <img src="{% static 'media/ferbo.jpeg' %}" alt="ferbo" style="width: 100%;">
+</section>
+<section class="bg-dark py-5">
+<div class="container my-5 text-light">
+    <!-- Product Detail Section -->
+     {% for ferbo in ferbos %}
+    <a href="{% url 'generator-poso-details' ferbo.slug %}" class="row text-light" style="text-decoration: none;">
+        <!-- Product Image and Thumbnails -->
+        <div class="brand_card gap-5 d-flex flex-column-reverse flex-md-row">
+           
+            {% comment %}  {% endcomment %}
+            <div>
+                <h1 class="fw-bold ">{{ferbo.name}}</h1>
+                <p class="">
+                    {{ ferbo.description }}
+                </p>
+            </div>
+            <!--  -->
+             <!-- Main Product Image -->
+             <img
+             style="
+             object-fit: cover;
+             object-position: center;
+             border-radius: 10px;
+             width: 50%;
+             height: fit-content;
+             "
+             src="{{ferbo.image.url}}"
+             alt="{{ferbo.name}}"
+             
+         />
+         <!--  -->
+        </div>
+    </a>
+    <hr class="border-light border-2 border">
+    {% endfor %}
+</div><!--    Container-->
+</section>
+{% endblock %}
+
+
+
+
+{% block js %}{% endblock %}

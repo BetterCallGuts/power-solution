@@ -4,12 +4,102 @@
 
 {% block title %}services{% endblock %}
 
-{% block css %}{% endblock %}
+{% block css %}
+<style>
+  .services li{
+    border-bottom: 5px solid ;
+    border-image: linear-gradient(to right, #3acfd5 0%, #032931 100%) 1;
+
+    border-right: 5px solid ;
+  }
+</style>
+{% endblock %}
 
 
 {% block content %}
 
+<img 
+id="accessories"
+src="{% static 'media/accessorie.jpg' %}" alt="generators" style="width: 100%;">
 
+<section class="bg-light">
+<h1 class="text-center text-light bg-dark">Services</h1>
+
+    <div class="container " style="color: black;">
+        <ul class="list-group services py-5" id="services">
+
+          <!--  -->
+          <li class="row py-3">
+            <div class="col-md-6 ">
+
+                <h2>Sales and Installation</h2>
+                <hr>
+                <p class="mx-5">
+                    
+                    We offer a wide range of high-quality UPS systems and generators tailored to meet your power needs. Our team ensures seamless installation for optimal performance.
+                </p>
+            </div>
+          </li>
+        <!--  -->
+        
+        
+        <!--  -->
+        <li class="row py-3">
+          <div class="col-md-6 ">
+
+            <h2>Maintenance and Repairs</h2>
+            <hr>
+            <p class="mx-5">
+              
+              Keep your equipment running smoothly with our routine maintenance services. Our expert technicians are also available for prompt and reliable repair services.
+            
+            </p>
+          </div>
+      </li>
+      <!--  -->
+
+    <!--  -->
+    <li class="row py-3">
+      <div class="col-md-6 ">
+
+        <h2>24/7 Emergency Support</h2>
+        <hr>
+        <p class="mx-5">          
+          Power emergencies can happen anytime. Count on our round-the-clock support to minimize downtime and restore power swiftly.
+
+        </p>
+        </div>
+      </li>
+      <!--  -->
+
+      <li class="row py-3">
+        <div class="col-md-6 ">
+  
+          <h2>Spare Parts Supply</h2>
+          <hr>
+          <p class="mx-5">          
+            We maintain a stock of genuine spare parts for all major brands, ensuring quick replacements and minimal disruptions.
+          </p>
+          </div>
+        </li>
+        <!--  -->
+
+        <li class="row py-3">
+          <div class="col-md-6 ">
+    
+            <h2>Service Contracts</h2>
+            <hr>
+            <p class="mx-5">          
+              Enjoy peace of mind with our comprehensive service contracts, covering regular check-ups, preventive maintenance, and priority support.
+            </p>
+            </div>
+          </li>
+          <!--  -->
+
+    </ul>
+      
+    </div>
+</section>
 {% endblock %}
 
 
