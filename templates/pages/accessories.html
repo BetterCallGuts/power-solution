@@ -2,9 +2,17 @@
 
 {% load static %}
 
+{% block meta_description %}
+power solution UPS accessories
+{% for ups in UPSs %}{{ups.name}}|{% endfor %}
+{% endblock %}
+{% block og_title %}power solution UPS accessories{% endblock %}
 
 
-{% block title %}accessories{% endblock %}
+{% block meta_keywords %}UPS accessories, UPS, Power Solution, Generators, UPS, Accessories, Power Solution, {% for ups in UPSs %}{{ups.name}}, {% endfor %} {% endblock %}
+
+
+{% block title %}UPS accessories{% endblock %}
 
 
 {% block css %}
@@ -58,7 +66,7 @@
 <form id="accessories" method="get" style="background:url({% static 'media/accesories.webp' %}) no-repeat center center fixed; background-size: cover;">
 
 <div class="container text-center py-5 d-flex flex-column justify-content-center align-items-center gap-3">
-  <label for="search " class="form-label fs-5 fw-bold">Search for ups accessories</label>
+  <label for="search" class="form-label fs-5 fw-bold">Search for ups accessories</label>
   <input 
   type="text" 
   id="search"

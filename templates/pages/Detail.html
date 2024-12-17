@@ -1,7 +1,23 @@
 {% extends 'components/base.html' %}
 {% load static %}
 
-{% block title %}About{% endblock %}
+
+{% block meta_description %}
+powersolution {{product.name}} details
+{{ product.name }} : {{product.description}}
+{% endblock %}
+{% block og_image %}{{thumbnail_url}}{% endblock %}
+{% block og_description %}
+powersolution {{product.name}} details
+{{ product.name }} : {{product.description}}
+{% endblock %}
+
+{% block og_title %}power solution {{product.name}} details{% endblock %}
+
+{% block meta_keywords %} {{product.name}} details,  {{product.name}} Power Solution, Generators, UPS, Accessories, Power Solution, {{product.name}} {% endblock %}
+
+
+{% block title %}{{product.name}} Details{% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'framework/css/bootstrap-icons.css' %}">
@@ -117,7 +133,7 @@
             
             <!-- Thumbnail Images -->
             <div class="d-flex flex-wrap gap-2 Thumbnails">
-                <img src="{{product.thumbnail.url}}" alt="{{product.name}}"                  style="border:2px solid #032931;width: 60px; height: 60px; object-fit: cover;" onclick="changeImage(this.src)">
+                <img src="{{product.thumbnail.url }}" alt="{{product.name}}"                  style="border:2px solid #032931;width: 60px; height: 60px; object-fit: cover;" onclick="changeImage(this.src)">
                 {% for photo in other_photos %}
                 <img src="{{photo.image.url}}" alt="{{product.name}}"                      style="border:2px solid #032931;width: 60px; height: 60px; object-fit: cover;" onclick="changeImage(this.src)">
                 {% endfor %}

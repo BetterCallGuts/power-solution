@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: black;
+
+}
+/* startr header */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+}
+
+header #header__logo h1 a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+
+
+}
+/* header #header__logo h1 a span:nth-child(1){
+    color: red;
+} 
+
+header #header__logo h1 a span:nth-child(2){
+    display: inline-block;
+    transform: rotate(30deg);
+}  */
+header #header__nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    gap: 1rem;
+}
+header #header__nav ul a {
+    font-family: Arial, Helvetica, sans-serif;
+    border:  1px solid black;
+    padding: 1rem 1.6rem;
+    border-radius: 100vmax;
+    transition: .2s  transform ;
+
+}
+header #header__nav ul  a{
+    width: 100%;
+    height: 100%;
+    background: none;
+    display: inline-block;
+}
+header #header__nav ul li:first-child a { 
+    background-color: black;
+
+    
+}
+header #header__nav ul li:first-child a{
+    color: white;
+}
+
+
+header #header__nav ul li:first-child:hover a{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    color: #000;
+}
+
+header #header__nav ul li:last-child:hover a{
+    background-color: black;
+    transform: scale(1.1);
+    color: white;
+}
+
+/* end header */
+main {
+    position: relative;
+    /* height: 100vh;
+    width: 100vw; */
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 3rem 0 ;
+
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../media/main_section_photo.jpg") center;
+    background-size: cover;
+    /* filter: blur(4px); */
+    z-index: -1; /* Places it behind the content */
+}
+
+main > * {
+    position: relative; /* Ensures content is above the blurred background */
+    z-index: 1;
+}
+
+main div{
+    
+    padding: 20px 20px;
+    border: 1px solid black;
+    border-radius: 30px;
+   margin: 2px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    gap: 4rem;
+    box-shadow: 0 0 10px black;
+
+}
+
+main div h2{
+    color: rgb(255, 255, 255);
+    padding: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    text-wrap: balance;
+    text-align: center;
+    /* width: ; */
+    text-shadow: 0 0 10px black;
+}
+
+main div form{
+    display: flex;
+   
+     justify-content:center;
+     align-items: center;
+     gap: 4rem;
+     width: 100%;
+     height: 100%;
+}
+main div form input{
+    width: 50%;
+    height: 100%;
+    border: none;
+    /* margin: 0 5rem; */
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 2vmax;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+    transition: .2s  transform;
+    text-align: center;
+}
+main div form input:focus{
+    outline: none;
+    transform: scale(1.1);
+}
+
+main div form input::placeholder{
+    text-align: center;
+}
+
+
+
+main div form button{
+    background:rgba(0, 0, 0, 0.534);
+    /* border: 1px solid black; */
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    fill: white;
+    padding: 3px;
+    transition: .2s  transform;
+}
+
+main div form button:hover{
+    cursor: pointer;
+    transform: scale(.9);
+}
+
+main section{
+    background: white;
+}

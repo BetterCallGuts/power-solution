@@ -1,20 +1,104 @@
 {% extends 'components/base.html' %}
-
 {% load static %}
 
+{% block meta_description %}
+power solution ferbo {{ferbo.name}} details 
+xcel sheet for {{ferbo.name}}
+{% endblock %}
 
+{% block og_image %}{{ferbo.image.url}}{% endblock %}
+{% block og_description %}
+power solution ferbo {{ferbo.name}} details 
+xcel sheet for {{ferbo.name}}
+{% endblock %}
+{% block og_title %}power solution {{ferbo.name}} details{% endblock %}
 
-{% block title %}About{% endblock %}
+{% block meta_keywords %}ferbo {{ferbo.name}} details, ferbo, Power Solution, Generators, UPS, Accessories, Power Solution, {{ferbo.name}} {% endblock %}
 
+{% block title %}{{ ferbo.name }} Details{% endblock %}
 
-{% block css %}{% endblock %}
-
+{% block css %}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        word-wrap: break-word; /* Prevent content overflow */
+    }
+    th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+    /* Responsive container for scroll */
+    .table-container {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    }
+</style>
+{% endblock %}
 
 {% block content %}
+<h1 class="text-center py-5 px-5">Contents of {{ ferbo.name }}'s Excel File</h1>
+<section class="container rounded-2 my-5 p-5 w-100 bg-dark text-light">
+    
+    <table 
+    
+    class="fs-4 fw-bold "
+   
+    id="excel-table"
+    >
+    
+    </table>
+    
+</section>
+
+
 
 {% endblock %}
 
+{% block js %}
+<script src="{% static 'framework/js/xlsx.js' %}"></script>
 
+<script>
+    // URL of the xlsx file
+    const fileUrl = "{{ ferbo.xlsx.url }}"; // Replace with the actual dynamic URL in your template
+    
+    // Function to fetch and display the Excel file
+    async function displayExcel() {
+        const response = await fetch(fileUrl);
+        const arrayBuffer = await response.arrayBuffer();
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: "array" });
 
+        // Get the first worksheet
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
 
-{% block js %}{% endblock %}
+        // Convert the sheet to JSON
+        const sheetData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+        // Render the data in an HTML table
+        const table = document.getElementById("excel-table");
+        table.innerHTML = ""; // Clear existing content
+
+        sheetData.forEach(row => {
+            const tr = document.createElement("tr");
+            row.forEach(cell => {
+                const td = document.createElement("td");
+                td.textContent = cell !== undefined ? cell : ""; // Handle undefined cells
+                tr.appendChild(td);
+            });
+            table.appendChild(tr);
+        });
+    }
+
+    // Call the function
+    displayExcel();
+</script>
+
+{% endblock %}

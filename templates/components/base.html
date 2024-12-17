@@ -8,29 +8,39 @@
     {% comment %}  {% endcomment %}
 
     <!-- Meta Description -->
-    <meta name="description" content="{% block meta_description %}Default description of your page{% endblock %}">
+    <!--Done--> <meta name="description" content="{% block meta_description %}{% endblock %}">
     
     <!-- Meta Keywords -->
-    <meta name="keywords" content="Power Solution, energy, sustainable solutions{% block meta_keywords %}{% endblock %}">
+    <meta name="keywords" content="powersolution,Power Solution, energy, sustainable solutions{% block meta_keywords %}{% endblock %}">
     
     <!-- Meta Author -->
-    <meta name="author" content="Your Name or Company">
+    <!--Done--><meta name="author" content="Your Name or Company">
     
     <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="{% block og_title %}{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}{% endblock %}">
-    <meta property="og:image" content="{% block og_image %}{% endblock %}">
-    <meta property="og:url" content="{{ request.build_absolute_uri }}">
-    <meta property="og:type" content="website">
+     <!--Done--><meta property="og:title"        content="{% block og_title %}{% endblock %}">
+     <!--Done--><meta property="og:description"  content="{% block og_description %}{% endblock %}">
+     <!--Done--><meta property="og:image"        content="{% block og_image %}{% static 'media/acessories-generatoes.jpeg' %}{% endblock %}">
+     <!--Done--><meta property="og:url"          content="{{ request.build_absolute_uri }}">
+     <!--Done--><meta property="og:type"         content="website">
     
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}{% endblock %}">
-    <meta name="twitter:description" content="{% block twitter_description %}{% endblock %}">
-    <meta name="twitter:image" content="{% block twitter_image %}{% endblock %}">
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"        content="{% block twitter_title %}Power solutions{% endblock %}">
+    <meta name="twitter:description"  content="{% block twitter_description %}
+At Power Solution, we are leaders in providing
+reliable power solutions tailored to industries and
+businesses’ diverse needs.With years of expertise in
+the field, we specialize in high-performance industrial
+generators and UPS systems designed to ensure
+uninterrupted operations in critical environments. {% endblock %}">
+    <meta name="twitter:image"        content="{% block twitter_image %}{% static 'media/acessories-generatoes.jpeg' %}{% endblock %}">
 
     <!-- Favicon -->
-    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'media/high_res_image.ico' %}" type="image/x-icon">
+{% comment %}  {% endcomment %}
+
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <meta property="og:locale" content="ar_AR" />
 
     {% comment %}  {% endcomment %}
     <style>

@@ -1,11 +1,11 @@
-<form method="post" class="p-2  rounded-3 p-md-3  ">
+<form method="post" autocomplete="on" class="p-2  rounded-3 p-md-3  ">
   {% csrf_token %}
   <h2 class="fw-normal fs-1 text-center  ">Contact information</h2>
   <div class="container">
     
     {% comment %} name {% endcomment %}
     <div class="form-group my-3">
-        <label class="mb-2" for="name ml-5">Name</label>
+        <label class="mb-2" for="name">Name</label>
         <input
         name="name"
         type="text" 

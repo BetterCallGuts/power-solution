@@ -4,7 +4,7 @@ from django.contrib.messages import constants as messages
 BASE_DIR       = Path(__file__).resolve().parent.parent
 SECRET_KEY     = 'django-insecure-05ypsjz$tkn5y#aq$3430#9fqqbdns$j3@gc7ab^e5_@-mz6vy'
 DEBUG          = True
-ALLOWED_HOSTS  = []
+ALLOWED_HOSTS  = ["*"]
 INSTALLED_APPS = [
     "jazzmin"                    ,
     'django.contrib.admin'       ,

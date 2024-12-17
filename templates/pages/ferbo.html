@@ -2,9 +2,13 @@
 
 {% load static %}
 
+{% block meta_description %} Power solution ferbo  {% for ferbo in ferbos %} {{ferbo.name}} {% endfor %} {% endblock %}
+{% block meta_keywords %}Ferbo Generators, Ferbo, Power Solution, Generators, UPS, Accessories, Power Solution, {% for ferbo in ferbos %}{{ferbo.name}}, {% endfor %} {% endblock %}
+{% block og_title %}power solution Ferbo{% endblock %}
+{% block og_description %} Power solution ferbo  {% for ferbo in ferbos %} {{ferbo.name}} {% endfor %} {% endblock %}
 
 
-{% block title %}About{% endblock %}
+{% block title %}Ferbo Generators{% endblock %}
 
 
 {% block css %}

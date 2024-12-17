@@ -3,6 +3,18 @@ from .models import Brand, Product,ProductImage, RequestInfo, ProductHighLight, 
 from django.views.generic import View
 from django.contrib import messages
 from django.db.models import Q
+import openpyxl
+from django.utils.http import urlencode
+from django.conf.urls import handler404
+
+
+
+
+
+def my_404(req):
+    return render(req, '404.html', status=404)
+handler404 = my_404
+
 
 
 def contact_form_handler(request):
@@ -21,10 +33,12 @@ def contact_form_handler(request):
 class index(View):
     def get(self, request):
             brands = Brand.objects.all().filter(deactivated=False)
+            prods  = Product.objects.all().order_by("?")[:10]            
 
             context = {
                 'brands': brands,
-                "home": "active"
+                "home": "active",
+                "products": prods,
                 }
             
             return render(request, 'pages/home.html' , context=context)
@@ -53,26 +67,28 @@ class UPS(View):
 
 
 class FerboDetailView(View):
-
-
-
-
     def get(self, req, slug):
         try:
-
             ferbo = Ferbo.objects.get(slug=slug)
-        except:
+        except Ferbo.DoesNotExist:
             return redirect('index')
 
+        data = []  # Default empty data
+        if ferbo.xlsx:
+            # Open the Excel file
+            wb = openpyxl.load_workbook(ferbo.xlsx.path, data_only=True)
+            sheet = wb.active
+
+            # Extract rows as plain values, replacing None with an empty string
+            data = [[cell.value if cell.value is not None else "" for cell in row] for row in sheet.iter_rows()]
+
         context = {
-            "generator": "active" ,
-            "ferbo": ferbo        ,
-            
+            "generator": "active",
+            "ferbo": ferbo,
+            'data': data,
         }
+
         return render(req, "pages/ferbo-detail.html", context=context)
-
-
-
 class FerboView(View):
 
     def get(self, req):
@@ -85,12 +101,15 @@ class FerboView(View):
         }
 
         return render(req, "pages/ferbo.html", context=context)
+
 # 
-def generator(request):
-    context = {
-        "generator": "active",
-        }
-    return render(request, 'pages/store.html', context=context)
+
+class Generator(View):
+    def get(self, req):
+        context = {
+            "generator": "active",
+            }
+        return render(req, "pages/poso.html", context=context)
 
 
 # 
@@ -103,8 +122,10 @@ class Service(View):
 class RequestInfoView(View):
     
     def get(self, request, slug):
-        
-        return render(request, 'pages/request-info.html')
+        context = {
+            "slug": slug,
+        }
+        return render(request, 'pages/request-info.html', context=context)
 
     def post(self, request, slug):
         
@@ -141,7 +162,9 @@ class DetailView(View):
     def get(self,request, slug):
         
         try: #{
-            prod = Product.objects.get(slug=slug)
+            prod  = Product.objects.get(slug=slug)
+            thumbnail_url = request.build_absolute_uri(prod.thumbnail.url)
+
             highlights   = ProductHighLight.objects.filter(product=prod)
             other_photos = ProductImage.objects.filter(product=prod)
             other= Product.objects.exclude(slug=slug).filter(category=prod.category, page=prod.page)
@@ -154,6 +177,7 @@ class DetailView(View):
             "other": other,
             "other_photos": other_photos,
             "highlights" : highlights,
+            "thumbnail_url": thumbnail_url,
         }
         return render(request, 'pages/Detail.html', context=context)
 
@@ -169,11 +193,18 @@ class accessories_ups(View):
                 context["q"] = q
                 print(len(upss))
             context["UPSs"] = upss
-            context["UPS"]  = "active"
+            context["accessories"]  = "active"
             
-            return render(request, 'pages/UPS.html', context=context)
+            return render(request, 'pages/accessories.html', context=context)
 
 
 class accessories_generator(View):
     def get(self, req,):
-        pass
+        
+        
+
+        context = {
+            "accessories": "active",
+            }
+        
+        return  render(req, 'pages/accessories-generators.html', context=context)

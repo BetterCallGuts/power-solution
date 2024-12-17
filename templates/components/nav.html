@@ -38,9 +38,10 @@
 
               <li><label class="dropdown-item" href="#" for="UPS" >Search UPS</label></li>
               <li>
-                    <form action="{% url 'UPS' %}" class="d-flex p-3" method="get"  role="search">
+                    <form autocomplete="on" action="{% url 'UPS' %}" class="d-flex p-3" method="get"  role="search">
 
                     <input 
+                    autocomplete="on"
                     class="form-control me-2" 
                     type="search" 
                     placeholder="Search" 
@@ -64,7 +65,7 @@
                   Generators
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'generator-poso' %}" for="generator" >PO-SO</a></li>
+                  <li><a class="dropdown-item" href="{% url 'generator-poso' %}#poso" for="generator" >PO-SO</a></li>
                   <li><a class="dropdown-item" href="{% url 'generator-ferbo' %}#ferbo" for="generator" >Ferbo</a></li>
                
                 </ul>
@@ -99,7 +100,7 @@
           </li>
     
               <li class="nav-item">
-                <a class="nav-link " href="{% url 'services' %}">Services</a>
+                <a class="nav-link " href="{% url 'services' %}#services">Services</a>
               </li>
 
 {% comment %}  {% endcomment %}
@@ -110,6 +111,21 @@
   </nav>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <nav  style="background-color: #032931;opacity:0;" class="navbar navbar-expand-lg navbar-dark  ">
     <div class="container-fluid">
       <!-- Logo -->
