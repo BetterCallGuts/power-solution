@@ -2,7 +2,11 @@
 
 {% load static %}
 
+{% block twitter_description %}
+Here is some UPS provided from powersolution:
+{% for ups in UPSs %}{{ups.name}}: {{ups.description|truncatechars:100}} {% endfor %} ↓
 
+{% endblock %}
 {% block og_title %}power solution UPS{% endblock %}
 {% block og_description %} Here is some UPS provided from powersolution {% endblock %}
 {% block meta_description %} 

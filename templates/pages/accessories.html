@@ -11,6 +11,10 @@ power solution UPS accessories
 
 {% block meta_keywords %}UPS accessories, UPS, Power Solution, Generators, UPS, Accessories, Power Solution, {% for ups in UPSs %}{{ups.name}}, {% endfor %} {% endblock %}
 
+{% block twitter_description %}
+power solution UPS accessories
+{% for ups in UPSs %}{{ups.name}}|{% endfor %}
+{% endblock %}
 
 {% block title %}UPS accessories{% endblock %}
 
