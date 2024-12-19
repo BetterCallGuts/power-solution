@@ -19,6 +19,9 @@ urlpatterns = [
 
     path("accessories/generator/",                        views.accessories_generator.as_view(),                                      name="accessories-generator"),  
 
+
+    path("request-info/generator/<str:slug>/",                         views.RequestInfoViewGenerator.as_view() ,                   name="request-info-generator"),
+
 # 
 
 ]

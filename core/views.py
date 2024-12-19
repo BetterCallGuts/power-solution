@@ -26,7 +26,43 @@ def contact_form_handler(request):
             messages.error(request, "Please fill all the fields")
 
 
-# 
+
+class RequestInfoViewGenerator(View):
+
+    def get(self, request, slug):
+        context = {
+         
+        }
+        return render(request, 'pages/request-info.html', context=context)
+    def post(self, request, slug):
+        
+        li = contact_form_handler(request)
+        # 
+        if not li:
+            return render(request, 'pages/request-info.html')
+        # 
+        name , email, phone_number, company_name, description = li
+        # 
+        if description:
+            description = f"{slug} : {description}"
+        else:
+            description = f"{slug}"
+        
+        req_info = RequestInfo.objects.create(
+            name        = name,
+            email       = email,
+            phone       = phone_number,
+            company     = company_name,
+            description = description,
+          
+            )
+        req_info.save()
+        messages.success(request, f"Your request has been sent successfully")
+        return redirect('index')
+#   
+
+
+
 class index(View):
     def get(self, request):
             brands = Brand.objects.all().filter(deactivated=False)
@@ -43,6 +79,21 @@ class index(View):
         li = contact_form_handler(request)
         if not li:
             return render(request, 'pages/home.html')
+        name , email, phone_number, company_name, description = li
+        # 
+       
+        
+        req_info = RequestInfo.objects.create(
+            name        = name,
+            email       = email,
+            phone       = phone_number,
+            company     = company_name,
+            description = description,
+          
+            )
+        req_info.save()
+        messages.success(request, f"Your request has been sent successfully")
+        return redirect('index')
 
 
 # 
