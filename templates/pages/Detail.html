@@ -138,7 +138,7 @@ powersolution {{product.name}} details
                 </style>
             
             <!-- Thumbnail Images -->
-            <div class="d-flex flex-wrap gap-2 Thumbnails">
+            <div class="d-flex flex-wrap gap-2 Thumbnails py-3">
                 <img src="{{product.thumbnail.url }}" alt="{{product.name}}"                  style="border:2px solid #032931;width: 60px; height: 60px; object-fit: cover;" onclick="changeImage(this.src)">
                 {% for photo in other_photos %}
                 <img src="{{photo.image.url}}" alt="{{product.name}}"                      style="border:2px solid #032931;width: 60px; height: 60px; object-fit: cover;" onclick="changeImage(this.src)">
@@ -147,7 +147,7 @@ powersolution {{product.name}} details
 
 
             <!--  -->
-            <div class="mt-3 overflow-hidden sssss" >
+            <div class="my-3 overflow-hidden sssss" >
                 <img 
                     id="mainImage" 
                     src="{{product.thumbnail.url}}"

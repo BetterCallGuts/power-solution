@@ -28,17 +28,8 @@
           
 
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {{UPS}} "
-            href="{% url 'UPS' %}#ups" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                UPS
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'UPS' %}#ups" for="UPS" >Go to UPS</a></li>
-
-              <li><label class="dropdown-item" href="#" for="UPS" >Search UPS</label></li>
-              <li>
-                    <form autocomplete="on" action="{% url 'UPS' %}" class="d-flex p-3" method="get"  role="search">
+            {% comment %} <li class="nav-item ">
+                    <form autocomplete="on" action="{% url 'UPS' %}" class="" method="get"  role="search">
 
                     <input 
                     autocomplete="on"
@@ -56,35 +47,13 @@
                             viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
               </form>
-            </li>
+            </li> {% endcomment %}
 
-            </ul>
-          </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link  {{generator}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Generators
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'generator-poso' %}#poso" for="generator" >PO-SO</a></li>
-                  <li><a class="dropdown-item" href="{% url 'generator-ferbo' %}#ferbo" for="generator" >Ferbo</a></li>
-               
-                </ul>
-              </li>
+
+         
          
          {% comment %}  {% endcomment %}
-         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle {{accessories}} "
-          href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          accessories 
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{% url 'accessories-ups' %}#ups" >UPS</a></li>
-
-            <li> <a class="dropdown-item" href="{% url 'accessories-generator' %}#generator"  >Generator</a><li>
-        
-
-          </ul>
-        </li>
+         
          {% comment %}  {% endcomment %}
           <li class="nav-item" >
             <a class="nav-link {{home}}" aria-current="page" href="{% url "index" %}#home">Home</a>
@@ -95,17 +64,68 @@
             <a class="nav-link " href="{% url 'index' %}#about">About</a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link " href="{% url 'index' %}#contact-us">Contact</a>
+          
+          <li class="nav-item ">
+            <a class="nav-link  {{UPS}} "
+            href="{% url 'UPS' %}#ups"  >
+                UPS
+            </a>
           </li>
-    
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link  {{generator}} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Generators
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'generator-poso' %}#poso" for="generator" >PO-SO</a></li>
+              <li><a class="dropdown-item" href="{% url 'generator-ferbo' %}#ferbo" for="generator" >Ferbo</a></li>
+           
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {{accessories}} "
+            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            accessories 
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'accessories-ups' %}#ups" >UPS</a></li>
+  
+              <li> <a class="dropdown-item" href="{% url 'accessories-generator' %}#generator"  >Generator</a><li>
+          
+  
+            </ul>
+          </li>
+
+     
               <li class="nav-item">
                 <a class="nav-link " href="{% url 'services' %}#services">Services</a>
               </li>
 
+
+              <li class="nav-item">
+                <a class="nav-link " href="{% url 'index' %}#contact-us">Contact</a>
+              </li>
+        
 {% comment %}  {% endcomment %}
 
         </ul>
+        <form   
+        
+        action="{% url 'UPS' %}"  method="get"  
+        class="d-flex mx-1" role="search">
+
+          <input required class="form-control me-2" type="search" placeholder="Search UPS" aria-label="Search" name="q">
+          <button class="btn btn-outline-secondary" type="submit">
+            <svg 
+            
+    width="20px"
+    height="20px"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+</button>
+        </form>
+
       </div>
     </div>
   </nav>

@@ -42,7 +42,7 @@ uninterrupted operations in critical environments. {% endblock %}
         object-fit: cover;
         transition:  0.3s;
             width: 100%;
-            height: 100%;
+            height: 50vh;
             object-position: center;
         }
         /*  */
@@ -108,81 +108,137 @@ uninterrupted operations in critical environments. {% endblock %}
     <div class="container">
     </div>
 </section>
-<!--  -->
-<h2 class="text-center my-5 text-light">Featured Products</h2>
-<div class="container my-5">
-    <div class="row g-4">
-       
-      {% for prod in products %}
-
-      <a href="{% url 'detail' prod.slug %}" class="col-lg-3 col-md-6   col-sm-12 text-decoration-none">
-        <div class="card h-100">
-          <img src="{{prod.thumbnail.url }}" class="card-img-top" alt="{{ prod.name }}">
-          <div class="card-body text-center">
-            <h5 class="card-title">{{prod.name}}</h5>
-
-            <p class="card-text">{{ prod.description|truncatechars:100 }}</p>
-
-          </div>
-        </div>
-    </a>
-      {% endfor %}
 
 
-    </div>
-</div>
-<!-- end product card -->
 
 
-<!-- about us -->
+{% comment %} Brand we deal  {% endcomment %}
+
+
 
 <style>
   
 
-    #swiper-2  .swiper-slide {
-      
-      font-size: 18px;
+  #swiper-2  .swiper-slide {
+    
+    font-size: 18px;
 
-      height: 155px;
-      background: white;
-      width:100%;
-      align-self: center;
+    height: 155px;
+    background: white;
+    width:100%;
+    align-self: center;
 
-    }
+  }
 
-     #swiper-2  .swiper-slide img {
+   #swiper-2  .swiper-slide img {
 
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 </style>
 {% if brands %}
 <div style="background:#032931;"> 
 
-  <h2 class="text-center text-light pt-3" >
-    Brands we deal with
-  </h2>
-  <div class="bg-light pt-1"> </div>
-  <div class="swiper py-5" id="swiper-2" style="background:#032931;">
-    <div class="swiper-wrapper">
-      {% for brand in brands %}
-      <div class="swiper-slide">
-        <img src="{{ brand.img.url }}" alt="{{ brand.name }}">
-      </div>
-      {% endfor %}
+<h2 class="text-center text-light pt-3" >
+  Brands we deal with
+</h2>
+<div class="bg-light pt-1"> </div>
+<div class="swiper py-5" id="swiper-2" style="background:#032931;">
+  <div class="swiper-wrapper">
+    {% for brand in brands %}
+    <div class="swiper-slide">
+      <img src="{{ brand.img.url }}" alt="{{ brand.name }}">
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    
+    {% endfor %}
   </div>
-
-
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  
+</div>
 
 </div>
 {% endif %}
-<h2 class="text-center my-5 text-light" id="about">About Us</h2>
+
+{% comment %} end brand we deal  {% endcomment %}
+
+
+<!-- about us -->
+
+
+<h2 class="text-center my-5 text-dark bg-light py-3" id="about">About Us</h2>
+
+
+{% comment %} what are we {% endcomment %}
+
+
+<section class="py-5 " >
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Column -->
+      <div class="col-lg-6">
+        <h2 class="text-light mb-4">What are we?</h2>
+        <hr>
+        <p class="text-light text-shadow-lg">
+          At Power Solution, we are leaders in providing
+          reliable power solutions tailored to industries and
+          businesses’ diverse needs.With years of expertise in
+          the field, we specialize in high-performance industrial
+          generators and UPS systems designed to ensure
+          uninterrupted operations in critical environments.
+          </p>
+        <p class="text-light">
+          Our product range includes state-of-the-art diesel
+          generators, modular UPS systems and batteries, all
+          engineered for optimal efficiency and reliability.
+          Whether it's emergency backup power for hospitals,
+          sustainable energy for remote locations, or
+          dependable systems for data centers, we deliver
+          solutions you can trust.</p>
+      </div>
+      <!-- Video Column -->
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9">
+          <!-- <iframe 
+            src="https://www.youtube.com/embed/example" 
+            title="Jubaili Bros Corporate Video 2023" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% comment %}  {% endcomment %}
+  <div class="d-flex justify-content-center">
+    <style>
+      .about__link{
+        transition: .4s;
+        text-decoration: none;
+        padding: 7px 15px;
+        border-radius: 10px;
+    
+        box-shadow: 2px 4px 3px black;
+        background-color: #032931;
+      }
+      .about__link:hover{
+        transform: translateY(-5px);
+    
+      }
+    </style>
+        <a 
+        href="{% url 'services' %}"
+        class="about__link mt-5   d-flex   text-light" style="width: fit-content; justify-content: center; ">Learn more ?</a>
+      </div>
+
+      {% comment %}  {% endcomment %}
+</section>
+
+{% comment %} end what are we {% endcomment %}
+
 
 <div  style="background: url({% static 'media/about-vision-main-photo.jpg' %}) center no-repeat; background-size: cover;">
 
@@ -282,70 +338,35 @@ uninterrupted operations in critical environments. {% endblock %}
 
 <!-- Bootom section -->
 
-<section class="py-5 " >
-  <div class="container">
-    <div class="row align-items-center">
-      <!-- Text Column -->
-      <div class="col-lg-6">
-        <h2 class="text-light mb-4">What are we?</h2>
-        <hr>
-        <p class="text-light text-shadow-lg">
-          At Power Solution, we are leaders in providing
-          reliable power solutions tailored to industries and
-          businesses’ diverse needs.With years of expertise in
-          the field, we specialize in high-performance industrial
-          generators and UPS systems designed to ensure
-          uninterrupted operations in critical environments.
-          </p>
-        <p class="text-light">
-          Our product range includes state-of-the-art diesel
-          generators, modular UPS systems and batteries, all
-          engineered for optimal efficiency and reliability.
-          Whether it's emergency backup power for hospitals,
-          sustainable energy for remote locations, or
-          dependable systems for data centers, we deliver
-          solutions you can trust.</p>
-      </div>
-      <!-- Video Column -->
-      <div class="col-lg-6">
-        <div class="ratio ratio-16x9">
-          <img src="{% static 'media/maxresdefault.jpg' %}" class="d-block w-100" alt="s">
-          <!-- <iframe 
-            src="https://www.youtube.com/embed/example" 
-            title="Jubaili Bros Corporate Video 2023" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe> -->
+
+
+<!-- Future Products -->
+<h2 class="text-center my-5 text-light">Featured Products</h2>
+<div class="container my-5">
+    <div class="row g-4">
+       
+      {% for prod in products %}
+
+      <a href="{% url 'detail' prod.slug %}" class="col-lg-3 col-md-6   col-sm-12 text-decoration-none">
+        <div class="card h-100">
+          <img src="{{prod.thumbnail.url }}" class="card-img-top" alt="{{ prod.name }}">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{prod.name}}</h5>
+
+            <p class="card-text">{{ prod.description|truncatechars:100 }}</p>
+
+          </div>
         </div>
-      </div>
+    </a>
+      {% endfor %}
+
+
     </div>
-  </div>
+</div>
+<!-- end product card -->
 
-{% comment %}  {% endcomment %}
-  <div class="d-flex justify-content-center">
-    <style>
-      .about__link{
-        transition: .4s;
-        text-decoration: none;
-        padding: 7px 15px;
-        border-radius: 10px;
-    
-        box-shadow: 2px 4px 3px black;
-        background-color: #032931;
-      }
-      .about__link:hover{
-        transform: translateY(-5px);
-    
-      }
-    </style>
-        <a 
-        href="{% url 'services' %}"
-        class="about__link mt-5   d-flex   text-light" style="width: fit-content; justify-content: center; ">Learn more ?</a>
-      </div>
 
-      {% comment %}  {% endcomment %}
-</section>
+
 
 {% comment %} Start of Contact us {% endcomment %}
 
@@ -416,7 +437,7 @@ uninterrupted operations in critical environments. {% endblock %}
       </div>
       <div class="right d-flex flex-column align-items-center gap-3 justify-content-center" width="100%">
           <svg width="70px" height="70px"  viewBox="0 0 8.4666669 8.4666669" id="svg8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs id="defs2"></defs> <g id="layer1" transform="translate(0,-288.53332)"> <path d="m 4.2324219,288.79688 c -1.6042437,0 -2.9101556,1.30591 -2.9101563,2.91015 -10e-7,2.82277 2.7460938,4.96875 2.7460938,4.96875 a 0.26460978,0.26460978 0 0 0 0.3300781,0 c 0,0 2.7460996,-2.14598 2.7460937,-4.96875 -3.4e-6,-1.60424 -1.3078657,-2.91015 -2.9121093,-2.91015 z m 0,0.52929 c 1.3182605,0 2.3828097,1.0626 2.3828125,2.38086 4.8e-6,2.30926 -2.0910618,4.13374 -2.3808594,4.38086 -0.2884142,-0.24588 -2.3828134,-2.0707 -2.3828125,-4.38086 5e-7,-1.31826 1.0625988,-2.38086 2.3808594,-2.38086 z" id="path929" style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"></path> <path d="m 4.2324219,290.38477 c -0.7274912,0 -1.3222633,0.59477 -1.3222657,1.32226 -4.5e-6,0.7275 0.5947697,1.32422 1.3222657,1.32422 0.727496,0 1.3242233,-0.59672 1.3242187,-1.32422 -2.3e-6,-0.72749 -0.5967275,-1.32226 -1.3242187,-1.32226 z m 0,0.52929 c 0.4415089,0 0.7949204,0.35146 0.7949219,0.79297 2.7e-6,0.44151 -0.35341,0.79492 -0.7949219,0.79492 -0.441512,0 -0.7929715,-0.35341 -0.7929688,-0.79492 1.4e-6,-0.44151 0.3514598,-0.79297 0.7929688,-0.79297 z" id="circle931" style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"></path> </g> </g></svg>
-          <h3 class="text-light fs-4 text-center w-75">3 Saudi building Cornish el nil, Asyut, Egypt.</h3>
+          <h3 class="text-light fs-4 text-center w-75">3 Saudi building Cornish el nile, Asyut, Egypt.</h3>
       </div>
   </div>
 </div>
