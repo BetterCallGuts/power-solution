@@ -69,6 +69,10 @@ uninterrupted operations in critical environments. {% endblock %}
       color: white;
       border: none;
     }
+    .card img{
+      height: 100%;
+    }
+  
     .btn-read-more:hover {
       background-color: #003d80;
     }
@@ -83,6 +87,8 @@ uninterrupted operations in critical environments. {% endblock %}
       }
     
     }
+    
+
     </style>
 {% endblock %}
 
@@ -137,6 +143,8 @@ uninterrupted operations in critical environments. {% endblock %}
     object-fit: cover;
     object-position: center;
   }
+
+ 
 </style>
 {% if brands %}
 <div style="background:#032931;"> 
@@ -484,11 +492,20 @@ uninterrupted operations in critical environments. {% endblock %}
             disableOnInteraction: false,
         },
         
-        slidesPerView: 4,
+        slidesPerView: 1,
         spaceBetween: 30,
         centeredSlides: true,
+        breakpoints: {
+         
+          640: {
+            slidesPerView: 2, 
+          },
 
-    });
+          1024: {
+            slidesPerView: 4,
+          },
+    }
+  });
     {% endif %}
 </script>
 {% endblock %}

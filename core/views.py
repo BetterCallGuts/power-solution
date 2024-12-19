@@ -11,9 +11,6 @@ from django.conf.urls import handler404
 
 
 
-def my_404(req):
-    return render(req, '404.html', status=404)
-handler404 = my_404
 
 
 
