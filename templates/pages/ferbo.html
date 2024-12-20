@@ -13,6 +13,8 @@
 
 
 {% block css %}
+
+<link rel="stylesheet" href="{% static 'framework/css/swiper.css' %}">
 <style>
     .brand_card{
         transition: .4s;
@@ -22,14 +24,36 @@
         transform: scale(.9);
         background-color: #032931;
     }
+    
+    #swiper-1 img{
+        object-fit: cover;
+        transition:  0.3s;
+            width: 100%;
+            height: 50vh;
+            object-position: center;
+        }
 </style>
 {% endblock %}
 
 
 {% block content %}
-<section id="ferbo">
-    <img src="{% static 'media/ferbo.jpeg' %}" alt="ferbo" style="width: 100%;height: 70vh;">
-</section>
+<div class="swiper" id="swiper-1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+                    <img src="{% static 'media/generator_ferbo_1_LE_upscale_balanced_x4.jpg' %}" alt="power-solution">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'media/generator_ferbo_2_LE_upscale_balanced_x4.jpg' %}" alt="power-solution">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div> 
+    <div class="container">
+    </div>
 <section class="bg-dark py-5">
 <div class="container my-5 text-light">
     <!-- Product Detail Section -->
@@ -71,4 +95,27 @@
 
 
 
-{% block js %}{% endblock %}
+{% block js %}
+
+<script src="{% static 'framework/js/swiper.js' %}"></script>
+<script>
+    new Swiper('#swiper-1', {
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+
+
+    });
+
+</script>
+{% endblock %}

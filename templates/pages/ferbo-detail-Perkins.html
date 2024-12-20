@@ -1,0 +1,1054 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block meta_description %}
+power solution ferbo {{ferbo.name}} details 
+xcel sheet for {{ferbo.name}}
+{% endblock %}
+
+{% block twitter_description %}
+power solution ferbo {{ferbo.name}} details 
+xcel sheet for {{ferbo.name}}
+{% endblock %}
+
+{% block og_image %}{{ferbo.image.url}}{% endblock %}
+{% block og_description %}
+power solution ferbo {{ferbo.name}} details 
+xcel sheet for {{ferbo.name}}
+{% endblock %}
+{% block og_title %}power solution {{ferbo.name}} details{% endblock %}
+
+{% block meta_keywords %}ferbo {{ferbo.name}} details, ferbo, Power Solution, Generators, UPS, Accessories, Power Solution, {{ferbo.name}} {% endblock %}
+
+{% block title %}{{ ferbo.name }} Details{% endblock %}
+
+{% block css %}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        word-wrap: break-word; 
+    }
+    th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+
+    .table-container {
+        max-width: 100%; 
+        overflow-x: auto; 
+        overflow-y: hidden; 
+        text-wrap: nowrap;
+    }
+    table {
+        min-width: 100%; 
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .table-container thead th{
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center py-5 px-5" style="color: #032931;">Contents of {{ ferbo.name }}'s Excel File</h1>
+<div class="container">
+    <img src="{{ferbo.image.url}}" class="img-fluid rounded-2" alt="ferbo image {{ferbo.name}}">
+</div>
+<section class="container rounded-2 my-5 p-5 w-100 bg-dark text-light">
+    <div class="table-container">
+        <table 
+        class="fs-4 fw-bold table table-bordered table-light"
+        id="excel-table">
+        <thead class="table-dark bg-dark">
+
+           <tr>
+            <th >Model</th>
+            <th >POWER PRP</th>
+            <th>POWER LTP</th>
+            <th >ENGINE TYPE	</th>
+            <th colspan="4">ALTERNATOR</th>
+            <th>DIMENSIONS L X W X H</th>
+            <th>WEIGHT</th>
+           </tr>
+
+           <!--  -->
+           <tr>
+            <th></th>
+            <th>KVA</th>
+            <th>KVA</th>
+            <th></th>
+            <th>LEROY</th>
+            <th>LINZ</th>
+            <th>MEC</th>
+            <th>STAM</th>
+            <th>mm</th>
+            <th>kg</th>
+           </tr>
+           </thead>
+<!--  -->
+        <tbody>
+
+
+                <tr>
+                      
+                    <td>FE11 P-OA-A</td>
+                      
+                    <td rowspan="3" >9</td>
+                    <td rowspan="3">10</td>
+                    <td rowspan="3">403A-11G1 (M)</td>
+                    <td rowspan="3">TAL040 B</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECP3-1L/4</td>
+                    <td rowspan="3">SOL1-H</td>
+                    <td>1300 X 700 X 1000</td>
+                    <td>375</td>
+                </tr>
+                <tr>
+                    <td>FE11 P-SVA-A</td>
+                    <td>1300 X 700 X 970</td>
+                    <td>415</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE11 P-SA-A</td>
+                    <td>1750 X 700 X 1125</td>
+                    <td>487</td>
+                </tr>
+                <tr>
+                    <td >FE16 P-OA-A</td>
+                    <td rowspan="3">13.1</td>
+                    <td rowspan="3">14.5</td>
+                    <td rowspan="3">403A-15G1  (M)</td>
+                    <td rowspan="3">TAL040 D</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECP3-2L/4</td>
+                    <td rowspan="3">SOL1-P</td>
+                    <td >1500 X 700 X 1020</td>
+                    <td >490</td>
+                </tr>
+                <tr>
+                    <td>FE16 P-SVA-A</td>
+                    <td>1750 X 700 X 1020</td>
+                    <td>540</td>
+                </tr>
+                <tr>
+                    <td>FE16 P-SA-A</td>
+                    <td>1750 X 700 X 1125</td>
+                    <td>575</td>
+                </tr>
+                <tr>
+                    <td >FE18 P-OA-A</td>
+                    <td rowspan="3">15</td>
+                    <td rowspan="3">17</td>
+                    <td rowspan="3">403A-15G2 (M)</td>
+                    <td rowspan="3">TAL040 D</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECP3-3L/4</td>
+                    <td rowspan="3">SOL1-P</td>
+                    <td >1500 X 700 X 1020</td>
+                    <td >490</td>
+                </tr>
+                <tr>
+                    <td>FE18 P-SVA-A</td>
+                    <td>1750 X 700 X 1020</td>
+                    <td>545</td>
+                </tr>
+                <tr>
+                    <td>FE18 P-SA-A</td>
+                    <td>1750 X 700 X 1125</td>
+                    <td>590</td>
+                </tr>
+                <tr>
+                    <td>FE22 P1-OA-A</td>
+                    <td rowspan="3" >20</td>
+                    <td rowspan="3" >22</td>
+                    <td rowspan="3" >404A-22G1 (M)</td>
+                    <td rowspan="3" >TAL040 F</td>
+                    <td rowspan="3" >/</td>
+                    <td rowspan="3" >ECP28-M/4 C</td>
+                    <td rowspan="3" >SOL2-G</td>
+                    <td>1500 X 700 X 1020</td>
+                    <td>560</td>
+                </tr>
+                <tr>
+                    <td>FE22 P1-SVA-A</td>
+                    <td>1750 X 700 X 1020</td>
+                    <td>625</td>
+                </tr>
+                <tr>
+                    <td>FE22 P1-SA-A</td>
+                    <td>1750 X 700 X 1125</td>
+                    <td>645</td>
+                </tr>
+                <tr>
+                      
+                    <td >FE33 P1-O-A</td>
+                    <td rowspan="2">30</td>
+                    <td rowspan="2">33</td>
+                    <td rowspan="2">1103A-33G (M)</td>
+                    <td rowspan="2">TAL042 C</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECP28-VL/4 C</td>
+                    <td rowspan="2">SOL2-P</td>
+                    <td >1750 X 700 X 1100</td>
+                    <td>685</td>
+                </tr>
+                <tr>
+                    <td>FE33 P1-S-A</td>
+                    <td>2100 X 870 X 1165</td>
+                    <td>940</td>
+                </tr>
+
+                <tr>
+
+                    <td>FE44 P1-O-A</td>
+                    <td rowspan="2">42</td>
+                    <td rowspan="2">46</td>
+                    <td rowspan="2">1103A-33TG1 (M)</td>
+                    <td rowspan="2">TAL042 F</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">S1L2-K (PRP 40kVA)</td>
+                    <td>1750 X 700 X 1100</td>
+                    <td>735</td>
+                      
+                </tr>
+                <tr>
+                    <td>FE44 P1-S -A</td>
+                    <td>2100 X 870 X 1165</td>
+                    <td>1005</td>
+                </tr>
+                
+                <tr>
+                    <td>FE50 P1-O-A</td>
+                    <td rowspan="2">45</td>
+                    <td rowspan="2">50</td>
+                    <td rowspan="2">1103A-33TG1 (M)</td>
+                    <td rowspan="2">TAL042 F</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECP32-2S/4 C</td>
+                    <td rowspan="2">S1L2-N</td>
+                    <td>1750 X 700 X 1100</td>
+                    <td>770</td>
+                </tr>
+                <tr>
+                    <td>FE50 P1-S-A</td>
+                    <td >2100 X 870 X 1165</td>
+                    <td >1020</td>
+                </tr>
+                
+                <tr>
+                      
+                    <td>FE66 P1-O-A</td>
+    
+                    <td rowspan="2">60</td>
+                    <td rowspan="2">66</td>
+                    <td rowspan="2">1103A-33TG2 (M)</td>
+                    <td rowspan="2">TAL042 H</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECP32-2M/4 C</td>
+                    <td rowspan="2">S1L2-Y</td>
+                    <td>2100 X 870 X 1300</td>
+                    <td>840</td>
+                </tr>
+                <tr>
+                    <td>FE66 P1-S -A&quot;</td>
+                      
+                    <td>2100 X 870 X 1165</td>
+      
+                    <td>1045</td>
+                      
+                </tr>
+                
+                <tr>
+                      
+                    <td>FE88 P1-O-A</td>
+                      
+                    <td rowspan="2">80</td>
+                    <td rowspan="2">88</td>
+                    <td rowspan="2">1104A-44TG2 (M)</td>
+                    <td rowspan="2">TAL044 B</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECP32-2L/4 C</td>
+                    <td rowspan="2">UCI224G</td>
+
+                    <td>2100 X 870 X 1300</td>
+      
+                    <td>940</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE88 P1-S-A</td>
+       
+                    <td>2260 X 1000 X 1420</td>
+      
+                    <td>1315</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE110 P-O-A</td>
+                      
+                    <td rowspan="2">100</td>
+                    <td rowspan="2">110</td>
+                    <td rowspan="2">1104C-44TAG2 (E)(II)</td>
+                    <td rowspan="2">TAL044 D</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECP34-2S/4 C</td>
+                    <td rowspan="2">UCI274C</td>
+   
+                    <td>2100 X 870 X 1400</td>
+      
+                    <td>1115</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE110 P-S-A</td>
+       
+                    <td>2260 x 1000 x 1420</td>
+      
+                    <td>1480</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE145 P1-O-A</td>
+        
+                    <td rowspan="2">135</td>
+                    <td rowspan="2">148</td>
+                    <td rowspan="2">1106A-70TG1 (M)</td>
+                    <td rowspan="2">TAL044 H</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECP34-2M/4 C</td>
+                    <td rowspan="2">UCI274E</td>
+   
+                    <td>2500 X 1000 X 1400</td>
+      
+                    <td>1390</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE145 P1-S-A</td>
+       
+                    <td>3000 X 1100 X 1520</td>
+      
+                    <td>1890</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE165 P1-O-A</td>
+                      
+                    <td rowspan="2">150</td>
+                    <td rowspan="2">165</td>
+                    <td rowspan="2">1106A-70TAG2 (M)</td>
+                    <td rowspan="2">TAL044 J</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECP34-1L/4 C</td>
+                    <td rowspan="2">UCI274F</td>
+                    <td >2500 X 1000 X 1400</td>
+                    <td >1480</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE165 P1-S-A</td>
+       
+                    <td>3300 X 1100 X 1770</td>
+      
+                    <td>2050</td>
+                </tr>
+                <tr>
+
+                    <td>FE198 P1-O-A</td>
+                    <td rowspan="2">180</td>
+                    <td rowspan="2">198</td>
+                    <td rowspan="2">1106A-70TAG3 (M)</td>
+                    <td rowspan="2">TAL044 L</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO38-1S/4 C</td>
+                    <td rowspan="2">UCI274G</td>
+   
+                    <td>2850 X 1000 X 1400</td>
+      
+                    <td>1540</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE198 P1-S-A</td>
+       
+                    <td>3300 X 1100 X 1770</td>
+      
+                    <td>2160</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE220 P1-O-A</td>
+                    <td rowspan="3">200</td>
+                    <td rowspan="3">220</td>
+                    <td rowspan="3">1106A-70TAG4 (E)</td>
+                    <td rowspan="3">TAL044 M</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECO38-2S/4 C</td>
+                    <td rowspan="3">UCI274H</td>
+                    <td>2850 X 1000 X 1650</td>
+                    <td>1590</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE220 P1-S-A</td>
+       
+                    <td>3300 X 1100 X 1770</td>
+      
+                    <td>2140</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE220 P1-SB-A</td>
+       
+                    <td>3800 X 1200 X 2000</td>
+      
+                    <td>2300</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE250 P1-O-A</td>
+                    <td rowspan="2">225</td>
+                    <td rowspan="2">250</td>
+                    <td rowspan="2">1206A-E70TTAG2 (E)</td>
+                    <td rowspan="2">TAL046 C</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO38-1M/4 C</td>
+                    <td rowspan="2">UCDI274J</td>
+                    <td>3000 X 1100 X 1500</td>
+                    <td>2090</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE250 P1-S-A</td>
+                    <td>3300 X 1100 X 1770</td>
+                    <td>2450</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE280 P1-O-A</td>
+                    <td rowspan="3">250</td>                                            
+                    <td rowspan="3">275</td>
+                    <td rowspan="3">1206A-E70TTAG3 (E)</td>
+                    <td rowspan="3">TAL046 D</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECO38-2M/4 C</td>
+                    <td rowspan="3">UCDI274K</td>
+                    <td>3000 X 1100 X 1500</td>
+                    <td>2160</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE280 P1-S-A</td>
+       
+                    <td>3300 X 1100 X 1770</td>
+      
+                    <td>2510</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE280 P1-SB-A</td>
+       
+                    <td>3800 X 1200 X 2000</td>
+      
+                    <td>2670</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE330 P1-O-A</td>
+                      
+                    <td rowspan="2">300</td>
+                    <td rowspan="2">330</td>
+                    <td rowspan="2">1506A-E88TAG5 (E)</td>
+                    <td rowspan="2">TAL046 F</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO38-1L/4  C</td>
+                    <td rowspan="2">S4L1D-D</td>
+                    <td>3300 X 1100 X 1800</td>
+                    <td>2630</td>
+                </tr>
+                <tr>
+                    <td>FE330 P1-S-A</td>
+                    <td>3800 X 1200 X 2000</td>
+                    <td>3100</td>
+                </tr>
+                <tr>
+                    <td>FE385 P1-O-A</td>
+                    <td rowspan="2">350</td>
+                    <td rowspan="2">385</td>
+                    <td rowspan="2">2206A-E13TAG2 (E)</td>
+                    <td rowspan="2">TAL046 H</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO38-2L/4 C</td>
+                    <td rowspan="2">S4L1D-E</td>
+                    <td>3300 X 1100 X 2100</td>
+                    <td>2900</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE385 P1-S-A</td>
+       
+                    <td>3950 X 1300 X 2150</td>
+      
+                    <td>3840</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE440 P1-O-A</td>
+                      
+                    <td rowspan="2">400</td>
+                    <td rowspan="2">440</td>
+                    <td rowspan="2">2206A-E13TAG3 (E)</td>
+                    <td rowspan="2">TAL0473 A</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO40-1S/4 C</td>
+                  
+                    <td rowspan="2">S4L1D-F (**)</td>
+   
+                    <td>3300 X 1100 X 2100</td>
+      
+                    <td>3400</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE440 P1-S-A</td>
+       
+                    <td>3950 X 1300 X 2150</td>
+      
+                    <td>3900</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE505 P-O-A</td>
+                      
+                    <td rowspan="2">450</td>
+                    <td rowspan="2">495</td>
+                    <td rowspan="2">2506A-E15TAG1 (E)</td>
+                    <td rowspan="2">TAL0473 B</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO40-2L/4 C</td>
+                  
+                    <td rowspan="2">S4L1D-G</td>
+   
+                    <td>3300 X 1100 X 2200</td>
+      
+                    <td>3430</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE505 P-S-A</td>
+       
+                    <td>4500 X 1450 X 2250</td>
+      
+                    <td>4600</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE560 P-O-A</td>
+                      
+                    <td rowspan="2">500</td>
+                    <td rowspan="2">550</td>
+                    <td rowspan="2">2506A-E15TAG2 (E)</td>
+                    <td rowspan="2">TAL0473 C</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO40-2S/4 C</td>
+                    <td rowspan="2">S5L1D-C</td>
+                    <td>3300 X 1100 X 2200</td>
+      
+                    <td>3490</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE560 P-S-A</td>
+       
+                    <td>4500 X 1450 X 2250</td>
+      
+                    <td>4840</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE610 P1-O-A</td>
+                      
+                    <td rowspan="2">550</td>
+                    <td rowspan="2">605</td>
+                    <td rowspan="2">2806A-E18TAG1A (E)</td>
+                    <td rowspan="2">TAL0473 D</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO40-1L/4 C</td>
+                    <td rowspan="2">S5L1D-D</td>
+                    <td>3400 X 1400 X 2200</td>
+      
+                    <td>4000</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE610 P1-SB-A</td>
+       
+                    <td>5000 X 1900 X 2350</td>
+      
+                    <td>6200</td>
+                </tr>
+                <tr>
+                    <td>FE660 P-O-A</td>
+                    <td rowspan="2">600</td>
+                    <td rowspan="2">660</td>
+                    <td rowspan="2">2806A-E18TAG1A (E)</td>
+                    <td rowspan="2">TAL0473 E</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO40-2L/4 C</td>
+                    <td rowspan="2">S5L1D-E</td>
+                    <td>3400 X 1400 X 2100</td>
+      
+                    <td>4600</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE660 P-SB-A</td>
+       
+                    <td>5000 X 1900 X 2350</td>
+      
+                    <td>5875</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE700 P-O-A</td>
+                      
+                    <td rowspan="2">650</td>
+                      
+                      
+                      
+                    <td rowspan="2">715</td>
+                      
+                      
+                      
+                    <td rowspan="2">2806A-E18TAG2</td>
+   
+                      
+                      
+                    <td rowspan="2">TAL0473 F</td>
+   
+                    <td rowspan="2">/</td>
+   
+                    <td rowspan="2">ECO40-3L/4 C</td>
+   
+                    <td rowspan="2">S5L1D-F</td>
+   
+                    <td>3400 X 1400 X 2100</td>
+      
+                    <td>4280</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE700 P-SB-A</td>
+       
+                    <td>5000 X 1900 X 2350</td>
+      
+                    <td>5930</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE780 P-O -A</td>
+                      
+                    <td rowspan="3">700</td>
+                    <td rowspan="3">770</td>
+                    <td rowspan="3">2806A-E18TTAG4</td>
+                    <td rowspan="3">TAL049 B</td>   
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECO40-VL/4 C</td>
+                    <td rowspan="3">S5L1D-G</td>
+   
+                    <td>3800 X 1700 X 2560</td>
+      
+                    <td>5000</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE780 P-S-A</td>
+       
+                    <td>5000 X 1900 X 2350</td>
+      
+                    <td>7400</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE780 P-SB-A</td>
+       
+                    <td>5850 X 1900 X 2350</td>
+      
+                    <td>7950</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE810 P-O-A</td>
+                      
+                    <td rowspan="3">750</td>
+                    <td rowspan="3">825</td>
+                    <td rowspan="3">4006-23TAG2A</td>
+                    <td rowspan="3">TAL049 B (PRP730kVA)</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECO40-VL/4 C</td>
+                    <td rowspan="3">S5L1D-H</td>
+   
+                    <td>3800 X 1700 X 2250</td>
+      
+                    <td>6000</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE810 P-S-A</td>
+       
+                    <td>5000 X 1900 X 2350</td>
+      
+                    <td>7500</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE810 P-SB-A</td>
+       
+                    <td>5850 X 1900 X 2350</td>
+      
+                    <td>8200</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE810 P-O-A</td>
+                      
+                    <td rowspan="3">750</td>
+                    <td rowspan="3">825</td>
+                    <td rowspan="3">2806A-E18TTAG5</td>
+                    <td rowspan="3">TAL049 B (PRP730kVA)</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECO40-VL/4 C</td>
+                    <td rowspan="3">S5L1D-H</td>
+   
+                    <td>3800 X 1700 X 2560</td>
+      
+                    <td>5600</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE810 P-S-A</td>
+       
+                    <td>5000 X 1900 X 2350</td>
+      
+                    <td>7400</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE810 P-SB-A</td>
+       
+                    <td>5850 X 1900 X 2350</td>
+      
+                    <td>8100</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE880 P-O-A</td>
+                      
+                    <td rowspan="3">800</td>
+                    <td rowspan="3">880</td>
+                    <td rowspan="3">4006-23TAG3A</td>
+                    <td rowspan="3">TAL049 C</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECO43-1S/4</td>
+                    <td rowspan="3">S6L1D-C</td>
+                    <td>4000 X 1800 X 2350</td>
+                    <td>5850</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE880 P-S-A</td>
+       
+                    <td>5000 X 1900 X 2350</td>
+      
+                    <td>7545</td>
+                </tr>
+                <tr>
+                      
+                    <td>FE880 P-SB-A</td>
+       
+                    <td>5850 X 1900 X 2350</td>
+      
+                    <td>8100</td>
+                </tr>
+                <tr >
+                    <td>FE900 P-O-A</td>
+                    <td rowspan="3">800</td>
+                    <td rowspan="3">900</td>
+                    <td rowspan="3">4006-23TAG3A</td>
+                    <td rowspan="3">TAL049 C</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECO43-2S/4</td>
+                    <td rowspan="3">S6L1D-D</td>
+                    <td>4000 X 1800 X 2350</td>
+                    <td>6050</td>
+                </tr>
+                <tr>
+                    <td>FE900 P-S-A</td>
+                    <td>5000 X 1900 X 2350</td>
+                    <td>7750</td>
+                </tr>
+                <tr>
+                    <td>FE900 P-SB-A</td>
+                    <td>5850 X 1900 X 2350</td>
+                    <td>8350</td>
+                </tr>
+                <tr>
+                    <td>FE1000 P-O-A</td>
+                    <td rowspan="3">915</td>
+                    <td rowspan="3">1005</td>
+                    <td rowspan="3">4008-TAG1A</td>
+                    <td rowspan="3">TAL049 D (PRP 910kVA)</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECO43-2S/4</td>
+                    <td rowspan="3">S6L1D-D</td>
+                    <td>4500 X 2050 X 2460</td>
+                    <td>7700</td>
+                </tr>
+                <tr>
+                    <td>FE1000 P-S-A</td>
+                    <td>5900 X 2270 X 2550</td>
+                    <td>10700</td>
+                </tr>
+                <tr>
+                    <td>FE1000 P-SB-A</td>
+                    <td>6500 X 2270 X 2550</td>
+                    <td>11100</td>
+                </tr>
+                <tr>
+                    <td>FE1120 P-O-A</td>
+                    <td rowspan="3">1022</td>
+                    <td rowspan="3">1125</td>
+                    <td rowspan="3">4008-TAG2A</td>
+                    <td rowspan="3">TAL049 E (PRP 1000kVA)</td>
+                    <td rowspan="3">/</td>
+                    <td rowspan="3">ECO43-1M/4</td>
+                    <td rowspan="3">S6L1D-E</td>
+                    <td>4800 X 2050 X 2200</td>
+                    <td>7800</td>
+                </tr>
+                <tr>
+                    <td>FE1120 P-S-A</td>
+                    <td>5900 X 2270 X 2550</td>
+                    <td>11000</td>
+                </tr>
+                <tr>
+                    <td>FE1120 P-SB-A</td>
+                    <td>6500 X 2270 X 2550</td>
+                    <td>11400</td>
+                </tr>
+                <tr>
+
+                    <td>FE1260 P-O-A</td>
+                    <td rowspan="2">1125</td>
+                    <td rowspan="2">1250</td>
+                    <td rowspan="2">4008-30TAG3</td>
+                    <td rowspan="2">LSA50.2 M6</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO43-2M/4</td>
+                    <td rowspan="2">S6L1D-F</td>
+                    <td>4900 X 2000 X 2300</td>
+                    <td>9550</td>
+                </tr>
+                <tr>
+                    <td>FE1260 P-SB-A</td>
+                    <td>7000 X 2270 X 2550</td>
+                    <td>11610</td>
+                </tr>
+                <tr>
+                    <td>FE1380 P-O-A</td>
+                    <td rowspan="2">1253</td>
+                    <td rowspan="2">1385</td>
+                    <td rowspan="2">4012-46TWG2A</td>
+                    <td rowspan="2">LSA50.2 M6</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO43-2L/4</td>
+                    <td rowspan="2">S6L1D-G</td>
+                    <td>4900 X 2000 X 2300</td>
+                    <td>11600</td>
+                </tr>
+                <tr>
+                    <td>FE1380 P-SB-A</td>
+                    <td>7000 X 2270 X 2550</td>
+                    <td>13300</td>
+                </tr>
+                <tr>
+                    <td>FE1500 P-O-A</td>
+                    <td rowspan="2">1360</td>
+                    <td rowspan="2">1500</td>
+                    <td rowspan="2">4012-46TWG3A</td>
+                    <td rowspan="2">LSA50.2 L8</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO43-VL/4</td>
+                    <td rowspan="2">S6L1D-H</td>
+                    <td>4800 X 2000 X 2370</td>
+                    <td>11800</td>
+                </tr>
+                <tr>
+                    <td>FE1500 P-SB-A</td>
+                    <td>7000 X 2270 X 2550</td>
+                    <td>14000</td>
+                </tr>
+                <tr>
+                    <td >FE1650 P-O-A</td>
+                    <td rowspan="2" >1500</td>
+                    <td rowspan="2" >1650</td>
+                    <td rowspan="2" >4012-46TAG2A</td>
+                    <td rowspan="2" >LSA50.2 L8</td>
+                    <td rowspan="2" >/</td>
+                    <td rowspan="2" >ECO46-1S/4</td>
+                    <td rowspan="2" >S7L1D-C1</td>
+                    <td             >5200 X 2200 X 2500</td>
+                    <td             >12400</td>
+                </tr>
+                <tr>
+                    <td>FE1650 P-SB-A</td>
+                    <td>7000 X 2460 X 2550</td>
+                    <td>15700</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">FE1870 P-O-A</td>
+                    <td rowspan="2">1705</td>
+                    <td rowspan="2">1875</td>
+                    <td>4012-46TAG3A</td>
+                    <td rowspan="2">LSA52.3 S5</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO46-2S/4</td>
+                    <td rowspan="2">S7L1D-F1</td>
+                    <td>5200 X 2220 X 2660</td>
+                    <td>13000</td>
+                </tr>
+                <tr>
+                    <td>FE1870 P-SB-A</td>
+                    <td>8300 X 2460 X 2820</td>
+                    <td>16500</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">FE2000 P-O-A</td>
+                    <td rowspan="2">1850</td>
+                    <td rowspan="2">2035</td>
+                    <td>4016-TAG1A</td>
+                    <td rowspan="2">LSA52.3 S5</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO46-1L/4</td>
+                    <td rowspan="2">S7L1D-F1</td>
+                    <td>6100 X 2200 X 2450</td>
+                    <td>13900</td>
+                </tr>
+                <tr>
+                    <td>4016-61TRG1</td>
+                    <td>6100 X 2200 X 2450</td>
+                    <td>14200</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">FE2000 P-SB-A</td>
+                    <td rowspan="2">1850</td>
+                    <td rowspan="2">2035</td>
+                    <td>4016-TAG1A</td>
+                    <td rowspan="2">LSA52.3 S5</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO46-1L/4</td>
+                    <td rowspan="2">S7L1D-F1</td>
+                    <td>8300 X 2460 X 2820</td>
+                    <td>22300</td>
+                </tr>
+                <tr>
+                    <td>4016-61TRG1</td>
+                    <td>8300 X 2460 X 2820</td>
+                    <td>18400</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">FE2200 P-O-A</td>
+                    <td rowspan="2">2000</td>
+                    <td rowspan="2">2200</td>
+                    <td>4016-TAG2A</td>
+                    <td rowspan="2">LSA52.3 S6</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO46-1L/4</td>
+                    <td rowspan="2">S7L1D-G1</td>
+                    <td>6150 X 2220 X 2450</td>
+                    <td>14500</td>
+                </tr>
+                <tr>
+                    <td>4016-61TRG2</td>
+                    <td>6150 X 2220 X 2450</td>
+                    <td>14800</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">FE2200 P-SB-A</td>
+                    <td rowspan="2">2000</td>
+                    <td rowspan="2">2200</td>
+                    <td>4016-TAG2A</td>
+                    <td rowspan="2">LSA52.3 S6</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO46-1L/4</td>
+                    <td rowspan="2">S7L1D-G1</td>
+                    <td>8300 X 2460 X 2820</td>
+                    <td>22900</td>
+                </tr>
+                <tr>
+
+                    <td>4016-61TRG2</td>
+                    <td>8300 X 2460 X 2820</td>
+                    <td>19000</td>
+                </tr>
+                <!--Done  -->
+                <tr>
+                      
+                    <td>FE2500 P-O-A</td>
+                    <td>2250</td>
+                    <td>2500</td>
+                    <td rowspan="2">4016-61TRG3</td>
+                    <td rowspan="2">LSA52.3 L9</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO46-1.5L/4</td>
+                    <td rowspan="2">S7L1D-H1</td>
+                    <td>6200 X 2350 X 2500</td>
+                    <td>15800</td>
+                </tr>
+                <tr>
+                    <td>FE2500 P-SB-A</td>
+                    <td>2250</td>
+                    <td>2500</td>
+                    <td>9000 X 2460 X 2820</td>
+                    <td>19800</td>
+                </tr>
+                <tr>
+                    <td>FE2600 P-O-A</td>
+                    <td rowspan="2">2500</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">4016-61TRG3X</td>
+                    <td rowspan="2">LSA52.3 L12</td>
+                    <td rowspan="2">/</td>
+                    <td rowspan="2">ECO46-2L/4</td>
+                    <td rowspan="2">S7L1D-J1</td>
+                    <td>6200 X 2350 X 2500</td>
+                    <td>16200</td>
+                </tr>
+                <tr>
+                    <td>FE2600 P-SB-A</td>
+                    <td>9000 X 2460 X 2820</td>
+                    <td>20200</td>
+                </tr>
+        </tbody>
+        </table>
+    </div>
+</section>
+
+
+
+{% endblock %}
+
+{% block js %}
+
+
+{% endblock %}

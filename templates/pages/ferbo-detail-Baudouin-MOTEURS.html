@@ -129,6 +129,8 @@ async function displayExcel() {
     secRow    =     firstRow  = sheetData.shift()
     sheetData.pop()
 // starter operation and handler of the xlsx Formate
+sheetData.pop()
+
 
 
 
@@ -140,19 +142,19 @@ async function displayExcel() {
     const table = document.querySelector("#excel-table tbody");
     table.innerHTML = ""; 
 
-    sheetData.slice(2).forEach(row => {
+    sheetData.slice(3).forEach(row => {
         const tr = document.createElement("tr");
         if (firstOp){
             firstOp = !firstOp
-            const name = row[1];
-            const powerPRP = row[7];
-            const powerLTP = row[12];
-            const engineType = row[16];
-            const leroy = row[24];
-            const mec = row[32];
-            const stam = row[38];
-            const mm = row[45];
-            const Kg = row[53];
+            const name = row[0];
+            const powerPRP = row[5];
+            const powerLTP = row[9];
+            const engineType = row[13];
+            const leroy = row[22];
+            const mec = row[29];
+            const stam = row[35];
+            const mm = row[40];
+            const Kg = row[47];
             
             // Create and append the 'name' cell
             var tdName = document.createElement("td");
@@ -208,13 +210,13 @@ async function displayExcel() {
 
             // Append the row to the table
             table.appendChild(tr);
-
+            
         } else{
-          
+         
             firstOp = !firstOp
-            const name = row[1];
-            const mm = row[45];
-            const Kg = row[53];
+            const name = row[0];
+            const mm = row[40];
+            const Kg = row[47];
             
             var nametd = document.createElement("td");
             nametd.textContent = name !== undefined ? name : "";

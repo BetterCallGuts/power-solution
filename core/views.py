@@ -118,23 +118,18 @@ class FerboDetailView(View):
     def get(self, req, slug):
         try:
             ferbo = Ferbo.objects.get(slug=slug)
-        except Ferbo.DoesNotExist:
+        except :
             return redirect('index')
-
-        data = []  # Default empty data
-        if ferbo.xlsx:
-            # Open the Excel file
-            wb = openpyxl.load_workbook(ferbo.xlsx.path, data_only=True)
-            sheet = wb.active
-
-            # Extract rows as plain values, replacing None with an empty string
-            data = [[cell.value if cell.value is not None else "" for cell in row] for row in sheet.iter_rows()]
-
         context = {
             "generator": "active",
             "ferbo": ferbo,
-            'data': data,
+
         }
+
+        if ferbo.name == "Perkins":
+            return render(req, "pages/ferbo-detail-Perkins.html", context=context)
+        if ferbo.name == "Baudouin-MOTEURS":
+            return render(req, "pages/ferbo-detail-Baudouin-MOTEURS.html", context=context)
 
         return render(req, "pages/ferbo-detail.html", context=context)
 class FerboView(View):
