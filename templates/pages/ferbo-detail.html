@@ -44,11 +44,15 @@ xcel sheet for {{ferbo.name}}
         max-width: 100%; 
         overflow-x: auto; 
         overflow-y: hidden; 
+        text-wrap: nowrap;
     }
     table {
         min-width: 100%; 
         border-collapse: collapse;
         margin-top: 20px;
+    }
+    .table-container thead th{
+        text-align: center;
     }
 </style>
 {% endblock %}
@@ -58,9 +62,37 @@ xcel sheet for {{ferbo.name}}
 <section class="container rounded-2 my-5 p-5 w-100 bg-dark text-light">
     <div class="table-container">
         <table 
-        class="fs-4 fw-bold"
+        class="fs-4 fw-bold table table-bordered table-light"
         id="excel-table">
+        <thead class="table-dark bg-dark">
 
+           <tr>
+            <th >Model</th>
+            <th >POWER PRP</th>
+            <th>POWER LTP</th>
+            <th >ENGINE TYPE	</th>
+            <th colspan="3">ALTERNATOR</th>
+            <th>DIMENSIONS L X W X H</th>
+            <th>WEIGHT</th>
+           </tr>
+
+           <!--  -->
+           <tr>
+            <th></th>
+            <th>KVA</th>
+            <th>KVA</th>
+            <th></th>
+            <th>LEROY</th>
+            <th>MEC</th>
+            <th>STAM</th>
+            <th>mm</th>
+            <th>kg</th>
+           </tr>
+           </thead>
+<!--  -->
+        <tbody>
+
+        </tbody>
 
         </table>
     </div>
@@ -76,7 +108,7 @@ xcel sheet for {{ferbo.name}}
 <script>
 
 const fileUrl = "{{ ferbo.xlsx.url }}"; 
-
+let firstOp   = true 
 async function displayExcel() {
     const response = await fetch(fileUrl);
     const arrayBuffer = await response.arrayBuffer();
@@ -87,18 +119,53 @@ async function displayExcel() {
     const sheetName = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[sheetName];
 
+    let sheetData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+    sheetData = sheetData.slice(1)
+    firstRow  = sheetData.shift()
+    sheetData = sheetData.slice(1)
+    secRow    =     firstRow  = sheetData.shift()
+    sheetData.pop()
+// starter operation and handler of the xlsx Formate
 
-    const sheetData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
 
-    const table = document.getElementById("excel-table");
+
+
+// 
+
+    console.log(sheetData)
+    const table = document.querySelector("#excel-table tbody");
     table.innerHTML = ""; 
 
     sheetData.slice(2).forEach(row => {
         const tr = document.createElement("tr");
+        if (firstOp){
+            firstOp = !firstOp
+            const name = row[0]
+            const powerPRP = row[1]
+            const powerLTP = row[2]
+            const engineType = row[3]
+            const leroy      = row[4]
+            const mec        = row[5]
+            const stam       = row[6]
+            const mm         = row[7]
+            const Kg         = row[8]
+            var tdName = document.createElement("td");
+            tdName.textContent = name !== undefined ? name : ""; 
+
+            var tdpowerPRP = document.createElement("td");
+            tdpowerPRP.textContent = powerPRP !== undefined ? powerPRP : "";
+
+
+
+        } else{
+            firstOp = !firstOp
+        }
         row.forEach(cell => {
+
             const td = document.createElement("td");
             td.textContent = cell !== undefined ? cell : ""; 
+            
             tr.appendChild(td);
         });
         table.appendChild(tr);

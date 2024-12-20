@@ -2,10 +2,10 @@
   {% csrf_token %}
   <h2 class="fw-normal fs-1 text-center  ">Contact information</h2>
   <div class="container">
-    
+    <small>Field with * is required</small>
     {% comment %} name {% endcomment %}
     <div class="form-group my-3">
-        <label class="mb-2" for="name">Name</label>
+        <label class="mb-2" for="name">* Name</label>
         <input
         name="name"
         type="text" 
@@ -18,7 +18,7 @@
     
       <!-- Email -->
       <div class="form-group  my-3">
-        <label class="mb-2" for="email">Email</label>
+        <label class="mb-2" for="email">* Email</label>
         <input 
         required
         name="Email"
@@ -32,7 +32,7 @@
 
       {% comment %}phonenumber {% endcomment %}
       <div class="form-group my-3">
-        <label class="mb-2" for="phonenumber">phone number</label>
+        <label class="mb-2" for="phonenumber">* phone number</label>
         <input 
         required
         type="text" 
@@ -46,7 +46,7 @@
       {% comment %} end phonenumber {% endcomment %}
    
         <div class="form-group my-3">
-          <label class="mb-2"  for="companyName">company name</label>
+          <label class="mb-2"  for="companyName">* company name</label>
           <input
             required
             type="text"

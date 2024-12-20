@@ -40,7 +40,37 @@ TO 1500 KVA.
 
 {% block title %}Po-so{% endblock %}
 
-{% block css %}{% endblock %}
+{% block css %}
+
+<style>
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+  }
+  th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+      word-wrap: break-word; 
+  }
+  th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+  }
+
+  .table-container {
+      max-width: 100%; 
+      overflow-x: auto; 
+      overflow-y: hidden; 
+  }
+  table {
+      min-width: 100%; 
+      border-collapse: collapse;
+      margin-top: 20px;
+  }
+</style>
+{% endblock %}
 
 {% block content %}
 <section class="bg-light px-1 py-5 ">
@@ -49,7 +79,7 @@ TO 1500 KVA.
         <h1>POSO DIESEL GENERATORS</h1>
         <div class="py-1" style="background: #032931;"> </div>
         <p class="mt-3">
-          OUR GENERATORS ARE DESIGNETO DELIVER DEPENDABLE
+          OUR GENERATORS ARE DESIGNED TO DELIVER DEPENDABLE
         
           PERFORMANCE WHEN YOU NEED IT THE MOST. 
           <br><br>
@@ -67,13 +97,14 @@ TO 1500 KVA.
 <div class="py-3" style="background: #032931;"> </div>
 
 <main class="bg-secondary">
-<section class="container p-5">
+<section class="container p-5 table-container">
 
 <table class="table table-bordered table-light text-center">
     <thead class="table-dark ">
         <tr>
             <th rowspan="4" class="align-middle">Generating Set</th>
             <th rowspan="4" class="align-middle">Perkins Engine</th>
+            <th rowspan="4" class="align-middle">Leroy Somer</th>
             <th rowspan="4" class="align-middle">RPM</th>
             <th colspan="4"
             > Rating</th>
@@ -92,9 +123,10 @@ TO 1500 KVA.
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><strong><span class="">POSO</span>9</strong></td>
-        <td>403A-11G1</td>
+      <tr><!--Done -->
+        <td><strong>PO-SO13</strong></td>
+        <td>403A-15G1</td>
+        <td>TAL040C</td>
         <td>1500</td>
         <td>9.0</td>
         <td>10.0</td>
@@ -102,17 +134,19 @@ TO 1500 KVA.
         <td>8.0</td>
       </tr>
       <tr>
-        <td><strong><span class="">POSO</span>12.5</strong></td>
-        <td>403A-15G1</td>
+        <td><strong>PO-SO15</strong></td>
+        <td>403A-15G2</td>
+        <td>TAL040D</td>
         <td>1500</td>
         <td>12.5</td>
         <td>14.0</td>
         <td>10.0</td>
         <td>11.2</td>
       </tr>
-      <tr>
-        <td><strong><span class="">POSO</span>15</strong></td>
-        <td>403A-15G2</td>
+      <tr><!--done-->
+        <td><strong>PO-SO20</strong></td>
+        <td>404D-22G</td>
+        <td>TAL040F</td>
         <td>1500</td>
         <td>15.0</td>
         <td>16.5</td>
@@ -120,17 +154,19 @@ TO 1500 KVA.
         <td>13.2</td>
       </tr>
       <tr>
-        <td><strong><span class="">POSO</span>20</strong></td>
-        <td>404A-22G1</td>
+        <td><strong>PO-SO30</strong></td>
+        <td>1103A-33G</td>
+        <td>TAL042C</td>
         <td>1500</td>
         <td>20.0</td>
         <td>22.0</td>
         <td>16.0</td>
         <td>17.6</td>
       </tr>
-      <tr>
-        <td><strong><span class="">POSO</span>30</strong></td>
-        <td>1103A-33G</td>
+      <tr><!--done-->
+        <td><strong>PO-SO45</strong></td>
+        <td>1103A-33TG1</td>
+        <td>TAL042F</td>
         <td>1500</td>
         <td>30.0</td>
         <td>33.0</td>
@@ -138,8 +174,9 @@ TO 1500 KVA.
         <td>26.4</td>
       </tr>
       <tr>
-        <td><strong>POSO45</strong></td>
-        <td>1103A-33TG1</td>
+        <td><strong>PO-SO60</strong></td>
+        <td>1103A-33TG2</td>
+        <td>TAL042H</td>
         <td>1500</td>
         <td>45.0</td>
         <td>50.0</td>
@@ -147,17 +184,9 @@ TO 1500 KVA.
         <td>40.0</td>
       </tr>
       <tr>
-        <td><strong>POSO60</strong></td>
-        <td>1103A-33TG2</td>
-        <td>1500</td>
-        <td>60.0</td>
-        <td>66.0</td>
-        <td>48.0</td>
-        <td>52.8</td>
-      </tr>
-      <tr>
-        <td><strong>POSO80</strong></td>
+        <td><strong>PO-SO80</strong></td>
         <td>1104A-44TG2</td>
+        <td>TAL044B</td>
         <td>1500</td>
         <td>80.0</td>
         <td>88.0</td>
@@ -165,71 +194,79 @@ TO 1500 KVA.
         <td>70.4</td>
       </tr>
       <tr>
-        <td><strong>POSO100</strong></td>
+        <td><strong>PO-SO100</strong></td>
         <td>1104C-44TAG2</td>
+        <td>TAL044D</td>
         <td>1500</td>
         <td>100.0</td>
         <td>110.0</td>
         <td>80.0</td>
         <td>88.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO135</strong></td>
+      <tr><!--done-->
+        <td><strong>PO-SO135</strong></td>
         <td>1106A-70TG1</td>
+        <td>TAL044H</td>
         <td>1500</td>
         <td>135.0</td>
         <td>150.0</td>
         <td>108.0</td>
         <td>120.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO150</strong></td>
+      <tr> <!--done-->
+        <td><strong>PO-SO150</strong></td>
         <td>1106A-70TAG2</td>
+        <td>TAL044J</td>
         <td>1500</td>
         <td>150.0</td>
         <td>165.0</td>
         <td>120.0</td>
         <td>132.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO180</strong></td>
-        <td>1106A-70TAG3</td>
+      <tr> <!--done-->
+        <td><strong>PO-SO180</strong></td>
+        <td>1106A-70TAG2</td>
+        <td>TAL044L</td>
         <td>1500</td>
         <td>180.0</td>
         <td>200.0</td>
         <td>144.0</td>
         <td>160.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO200</strong></td>
+      <tr><!--done-->
+        <td><strong>PO-SO200</strong></td>
         <td>1106A-70TAG4</td>
+        <td>TAL044M</td>
         <td>1500</td>
         <td>200.0</td>
         <td>220.0</td>
         <td>160.0</td>
         <td>176.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO230</strong></td>
-        <td>1206A-E70TTAG2</td>
+      <tr><!--done-->
+        <td><strong>PO-SO250</strong></td>
+        <td>1206A-E70TTAG3</td>
+        <td>TAL046D</td>
         <td>1500</td>
         <td>230.0</td>
         <td>253.0</td>
         <td>184.0</td>
         <td>202.4</td>
       </tr>
-      <tr>
-        <td><strong>POSO250</strong></td>
-        <td>1206A-E70TTAG3</td>
+      <tr><!--done-->
+        <td><strong>PO-SO250</strong></td>
+        <td>1506A-E88TAG3</td>
+        <td>TAL046D</td>
         <td>1500</td>
         <td>250.0</td>
         <td>275.0</td>
         <td>200.0</td>
         <td>220.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO275</strong></td>
-        <td>1506A-E88TAG4</td>
+      <tr> <!--done-->
+        <td><strong>PO-SO300</strong></td>
+        <td>1506A-E88TAG5</td>
+        <td>TAL046F</td>
         <td>1500</td>
         <td>275.0</td>
         <td>300.0</td>
@@ -237,8 +274,9 @@ TO 1500 KVA.
         <td>240.0</td>
       </tr>
       <tr>
-        <td><strong>POSO300</strong></td>
-        <td>1506A-E88TAG5</td>
+        <td><strong>PO-SO300</strong></td>
+        <td>1706A-E93TAG1</td>
+        <td>TAL046F</td>
         <td>1500</td>
         <td>300.0</td>
         <td>330.0</td>
@@ -246,98 +284,127 @@ TO 1500 KVA.
         <td>264.0</td>
       </tr>
       <tr>
-        <td><strong>POSO350</strong></td>
+        <td><strong>PO-SO350</strong></td>
         <td>2206A-E13TAG2</td>
+        <td>TAL046H</td>
         <td>1500</td>
         <td>350.0</td>
         <td>400.0</td>
         <td>280.0</td>
         <td>320.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO400</strong></td>
+      <tr> <!--done-->
+        <td><strong>PO-SO400</strong></td>
         <td>2206A-E13TAG3</td>
+        <td>TAL0473A</td>
         <td>1500</td>
         <td>400.0</td>
         <td>450.0</td>
         <td>320.0</td>
         <td>360.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO450</strong></td>
+      <tr> <!--done-->
+        <td><strong>PO-SO450</strong></td>
         <td>2506A-E15TAG1</td>
+        <td>TAL0473C</td>
         <td>1500</td>
         <td>455.0</td>
         <td>500.0</td>
         <td>364.0</td>
         <td>400.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO500</strong></td>
+      <tr> <!--done-->
+        <td><strong>PO-SO500</strong></td>
         <td>2506A-E15TAG2</td>
+        <td>TAL0473C</td>
         <td>1500</td>
         <td>500.0</td>
         <td>550.0</td>
         <td>400.0</td>
         <td>440.0</td>
       </tr>
+      <!--  -->
+      <!--  -->
       <tr>
-        <td><strong>POSO600</strong></td>
+        <td><strong>PO-SO600</strong></td>
         <td>2806A-E18TAG1A</td>
+        <td>TAL0473E</td>
+        
         <td>1500</td>
         <td>600.0</td>
         <td>660.0</td>
         <td>480.0</td>
         <td>528.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO650</strong></td>
+      <tr> <!--done-->
+        <td><strong>PO-SO650</strong></td>
         <td>2806A-E18TAG2</td>
+        <td>TAL0473F</td>
         <td>1500</td>
         <td>650.0</td>
         <td>700.0</td>
         <td>520.0</td>
         <td>560.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO700</strong></td>
-        <td>2806A-E18TAG4</td>
+      <tr> <!--done-->
+        <td><strong>PO-SO700</strong></td>
+        <td>2806A-E18TTAG4</td>
+        <td>TAL049B</td>
         <td>1500</td>
         <td>706.0</td>
         <td>780.0</td>
         <td>564.8</td>
         <td>624.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO750</strong></td>
-        <td>4006-23TAG2A</td>
+      <tr> <!--done-->
+        <td><strong>PO-SO770</strong></td>
+        <td>2806A-E18TTAG5</td>
+        <td>TAL049C</td>
         <td>1500</td>
         <td>750.0</td>
         <td>825.0</td>
         <td>600.0</td>
         <td>660.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO770</strong></td>
-        <td>2806A-E18TAG5</td>
-        <td>1500</td>
-        <td>770.0</td>
-        <td>850.0</td>
-        <td>616.0</td>
-        <td>680.0</td>
-      </tr>
-      <tr>
-        <td><strong>POSO800</strong></td>
+      <tr> <!--done--> 
+        <td><strong>PO-SO800</strong></td>
         <td>4006-23TAG3A</td>
+        <td>LSA49.3M8</td>
         <td>1500</td>
         <td>800.0</td>
         <td>880.0</td>
         <td>640.0</td>
         <td>704.0</td>
       </tr>
-      <tr>
-        <td><strong>POSO1000</strong></td>
+      <tr> <!--done-->
+        <td><strong>PO-SO1000</strong></td>
         <td>4008-30TAG2</td>
+        <td>LSA49.3L10</td>
+        <td>1500</td>
+        <td>1000.0</td>
+        <td>1100.0</td>
+        <td>800.0</td>
+        <td>880.0</td>
+      </tr>
+
+
+
+      <tr> <!--done-->
+        <td><strong>PO-SO1250</strong></td>
+        <td>4012-46TWG2A</td>
+        <td>LSA50.2M6</td>
+        <td>1500</td>
+        <td>1000.0</td>
+        <td>1100.0</td>
+        <td>800.0</td>
+        <td>880.0</td>
+      </tr>
+
+
+      <tr> <!--done-->
+        <td><strong>PO-SO1000</strong></td>
+        <td>4012-46TAG2A</td>
+        <td>LSA50.2L8/td>
         <td>1500</td>
         <td>1000.0</td>
         <td>1100.0</td>
